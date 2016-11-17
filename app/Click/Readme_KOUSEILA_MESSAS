@@ -1,0 +1,4 @@
+MESSAS KOUSEILA -Application_name : Click
+les mécanismes php permettant d'appeler et exécuter les méthodes - findOneByidentifiant()  ou  findByidentifiant() : 
+	grace à la methode magique __call($methode, $params), avec les expression regulier, on identifie les nom de fonction et l'artribut rechercher, FindByX : X étant l'attribut rechercher.
+

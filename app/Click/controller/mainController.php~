@@ -1,0 +1,45 @@
+<?php
+/*
+ * All doc on :
+ * Toutes les actions disponibles dans l'application 
+ *
+ */
+
+class mainController{
+
+public static function helloWorld($request,$context){
+	$context->mavariable="hello world";
+	$context->notify ="ceci est un message d'erreur issue de l'action helloWorld";
+	return context::SUCCESS;
+}
+
+public static function login($request,$context){
+	if(isset($request["login"], $request["passWord"])) {
+		$user = utilisateurTable::getUserByLoginAndPass($request["login"],$request["passWord"]);
+		if (!isset($user)) {
+			$context->notify = "aucun utilisateur de ce type";
+			return context::ERROR;
+		}
+		else {
+			context::setSessionAttribute("utilisateur",$user);
+			return context::SUCCESS;
+		}
+	}
+	else {
+		return context::ERROR;
+	}
+	
+}
+public static function logout($request,$context){
+	session_destroy();
+	$context->notify = "Vous etes bien deconnecte";
+	return context::SUCCESS;
+}
+
+
+public static function index($request,$context){
+		
+	return context::SUCCESS;
+}
+
+}
