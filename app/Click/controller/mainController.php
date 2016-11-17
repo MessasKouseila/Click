@@ -51,6 +51,10 @@ public static function listeUsers($request,$context){
 	$context->users = utilisateurTable::getUsers();
 	return context::SUCCESS;
 }
+
+    /* methode permetant d'afficher le dernier message posté sur le chat,
+     * tous les messages reçu par l'utilisateur qui viens de se connecter
+     */
 public static function showMessage($request,$context) {
 	$user = context::getSessionAttribute("utilisateur");
 	if (isset($user)) {
