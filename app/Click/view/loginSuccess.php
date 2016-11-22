@@ -6,7 +6,7 @@
 <script>
 $("#logout").click(function(e)
 {
-e.preventDefault()
+e.preventDefault();
 
 $.ajax({
 
