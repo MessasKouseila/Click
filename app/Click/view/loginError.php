@@ -6,7 +6,7 @@
                 <div class="account-wall">
                     <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
                          alt="">
-                    <form class="form-signin" action="Click.php?action=login">
+                    <form class="form-signin" action="">
                         <input type="text" name="login" class="form-control" placeholder="Login" required autofocus>
                         <input type="password" name="passWord" class="form-control" placeholder="Password" required>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">
