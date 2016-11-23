@@ -71,7 +71,7 @@ public static function showMessage($request,$context) {
 			return context::SUCCESS;
 		}
 		else {
-			return context::ERROR;
+			return context->redirect("Click.php?action=login");
 		}
 	}
 	else {
