@@ -8,7 +8,7 @@
                          alt="">
                     <form class="form-signin" action="Click.php?action=login">
                         <input type="text" name="login" class="form-control" placeholder="Login" required autofocus>
-                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        <input type="password" name="passWord" class="form-control" placeholder="Password" required>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">
                             Connexion</button>
                         <label class="checkbox pull-left">
