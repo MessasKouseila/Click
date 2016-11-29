@@ -1,5 +1,5 @@
 <div class="row text-center">
-    <div class="col-sm-6 col-md-4 col-md-offset-4">
+    <div class="col-xs-6 col-xs-offset-3">
         <h1 class="text-center login-title">Veuillez vous authentifier</h1>
         <div class="account-wall">
             <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
