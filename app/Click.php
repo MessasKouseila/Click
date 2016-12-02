@@ -29,7 +29,10 @@ if($view===false){
 
 //inclusion du layout qui va lui meme inclure le template view
 elseif($view!=context::NONE){
-	$template_view=$nameApp."/view/".$action.$view.".php";
+	foreach ($context->template as $key => $value) {
+		$template_view[$key] = $value;
+	}
+	$template_view[$action]=$nameApp."/view/".$action.$view.".php";
 	include($nameApp."/view/".$context->getLayout().".php");
 }
 
