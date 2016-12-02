@@ -1,4 +1,4 @@
-<div class="row text-center">
+<div class="row text-center nopadding">
     <div class="col-xs-6 col-xs-offset-3">
         <h1 class="text-center login-title">Veuillez vous authentifier</h1>
         <div class="account-wall">

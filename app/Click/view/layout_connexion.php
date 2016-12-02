@@ -17,9 +17,9 @@
 		</div>
 	<?php endif;?>
 	</div>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse nopadding">
             <div class="navbar-header">
-                <a class="navbar-brand nopadding" href="#"><span id="logo1">CLICK</span></a>
+                <a class="navbar-brand" href="#"><span id="logo1">C L I C K</span></a>
             </div>
     </nav>
 	<!-- j'ai le droit de mettre des commentaires dans mon fichier HTML -->
