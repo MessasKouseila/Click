@@ -19,7 +19,7 @@
 	</div>
     <nav class="navbar navbar-inverse">
             <div class="navbar-header">
-                <a class="navbar-brand nopadding" href="#"><span id="logo1">CLICK</span> <br> <span id="logo2">SocialMedia</span></a>
+                <a class="navbar-brand nopadding" href="#"><span id="logo1">CLICK</span></a>
             </div>
     </nav>
 	<!-- j'ai le droit de mettre des commentaires dans mon fichier HTML -->
