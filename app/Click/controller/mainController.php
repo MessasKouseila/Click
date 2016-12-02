@@ -60,6 +60,17 @@ class mainController{
         $context->users = utilisateurTable::getUsers();
         return context::SUCCESS;
     }
+    public static function profil($request,$context){
+        $context->user = context::getSessionAttribute("utilisateur");
+        return context::SUCCESS;
+    }
+    public static function menu($request,$context){
+        return context::SUCCESS;
+    }
+    public static function messages($request,$context){
+        $context->messages = messageTable::getUserMessageById(context::getSessionAttribute("utilisateur")->id);
+        return context::SUCCESS;
+    }
     public static function index($request,$context){
         $context->template["listeUsers"] = "listeUsers".self::listeUsers($request,$context);
         $context->template["messages"] = "messages".self::message($request,$context);
