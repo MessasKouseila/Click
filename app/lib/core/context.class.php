@@ -39,7 +39,12 @@ class context{
 	}
 
 	public function executeAction($action,$request){
-		$this->layout="layout";
+        if($this->getSessionAttribute("utilisateur") == NULL) {
+            $this->layout="layout_connexion";
+        }
+        else {
+            $this->layout = "layout";
+        }
 		if(!method_exists('mainController',$action))
 		  return false;
 		

@@ -23,7 +23,7 @@
             </div>
     </nav>
 	<!-- j'ai le droit de mettre des commentaires dans mon fichier HTML -->
-		<?php include($template_view); ?>
+		<?php include($template_view["login"]); ?>
         <script src="js/logo.js"></script>
 </div>
 </body>
