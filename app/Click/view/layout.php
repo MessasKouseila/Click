@@ -1,66 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>Click</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-  </style>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link href="css/login.css" rel="stylesheet"/>
+    <script src="js/jquery.js"></script>
+    <title>Ton appli !</title>
 </head>
 <body>
-
-<nav class="navbar navbar-inverse" id="menu" >
-  <?php include($template_view["menu"]); ?>
-</nav>
-  
-<div class="container text-center">    
-  <div class="row">
-    <div class="col-sm-3">
-      <div class="well" id="profil">
-      <?php include($template_view["profil"]); ?>
-      </div>
-      <div class="" id="chat">
-        <?php include($template_view["chat"]); ?>
-      </div>
-    </div>
-    <div class="col-sm-7">
-    
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="panel panel-default text-left">
-            <div class="panel-body">
-              <p contenteditable="true">Status: Feeling Blue</p>
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-thumbs-up"></span> Like
-              </button>     
+<div class="container-fluid nopadding">
+	<div id="notify">
+	<?php $var = $context->notify; ?>
+	<?php if(isset($var)) : ?>
+		<div class="alert alert-success">
+			<?php echo $context->notify; ?>
+		</div>
+	<?php endif;?>
+	</div>
+    <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <a class="navbar-brand nopadding" href="#"><span id="logo1">CLICK</span></a>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      <div id="messages">
-      <?php include($template_view["messages"]); ?>
-        </div>
-    </div>
-    <div class="col-sm-2 well" id="listeUsers">
-      <?php include($template_view["listeUsers"]); ?>
-    </div>
-  </div>
+    </nav>
+	<!-- j'ai le droit de mettre des commentaires dans mon fichier HTML -->
+		<?php include($template_view); ?>
+        <script src="js/logo.js"></script>
 </div>
-
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
-
 </body>
 </html>
-
