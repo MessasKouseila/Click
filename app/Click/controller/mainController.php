@@ -67,6 +67,9 @@ class mainController{
     public static function menu($request,$context){
         return context::SUCCESS;
     }
+    public static function  chat($request,$context){
+        return context::SUCCESS;
+    }
     public static function messages($request,$context){
         $context->messages = messageTable::getUserMessageById(context::getSessionAttribute("utilisateur")->id);
         return context::SUCCESS;
