@@ -27,7 +27,14 @@ class context{
 	}
 	
 	public function getLayout(){
-		 return $this->layout;
+        // si l'utilisateur ne c est pas connecter je lui retourne le layout de connexion
+        if($this->getSessionAttribute("utilisateur") !== NULL) {
+            return $this->layout_connexion;
+        }
+        // sinon le layout par default contenant toutes les vus
+        else {
+            return $this->layout;
+        }
 	}
 
 	public function setLayout($layout){
