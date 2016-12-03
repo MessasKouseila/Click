@@ -1,7 +1,6 @@
-<div id="resizeAndDrag">
 <div class="container" >
 <div class="row" >
-<div class="col-md-3" >
+<div class="col-md-3 col-sm-3 col-xs-3" >
     <div class="panel panel-primary" >
         <!-- menu du chat -->
         <div class="panel-heading" >
@@ -88,6 +87,6 @@
 </div >
 </div >
 </div >
-</div>
+<script src="js/chat.js"></script>
 
 

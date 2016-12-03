@@ -3,11 +3,10 @@
 <head>
   <title>Click</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
   <link href="css/chat.css" rel="stylesheet"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
   <style>    
     /* Set black background color, white text and some padding */
     footer {
@@ -79,11 +78,10 @@
     </div>
   </div>
 </div>
-
+<script src="js/chat.js"></script>
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
-
 </body>
 </html>
 
