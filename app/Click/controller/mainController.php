@@ -74,9 +74,15 @@ class mainController{
         $context->messages = messageTable::getUserMessageById(context::getSessionAttribute("utilisateur")->id);
         return context::SUCCESS;
     }
+    public static function statut($request,$context){
+        $context->user = context::getSessionAttribute("utilisateur");
+        return context::SUCCESS;
+    }
     public static function index($request,$context){
         $context->template["listeUsers"] = "listeUsers".self::listeUsers($request,$context);
         $context->template["messages"] = "messages".self::message($request,$context);
+        $context->template["profil"] = "profil".self::message($request,$context);
+        $context->template["chat"] = "chat".self::message($request,$context);
         return context::SUCCESS;
     }
 
