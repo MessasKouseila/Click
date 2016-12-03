@@ -39,6 +39,7 @@ class context{
 	}
 
 	public function executeAction($action,$request){
+
         if($this->getSessionAttribute("utilisateur") == NULL) {
             $this->layout="layout_connexion";
         }
