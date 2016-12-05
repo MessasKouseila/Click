@@ -16,7 +16,7 @@
   </style>
 </head><body>
 <nav class="navbar navbar-inverse" id="menu">
-  <div class="container-fluid" id="mainWindow">
+  <div class="container-fluid" >
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -52,7 +52,7 @@
     </div>
   </div>
 </nav>
-<div class="container-fluid text-center">
+<div class="container-fluid text-center" id="mainWindow">
   <div class="col-sm-3">
     <div class="well" id="profil">
       <?php include($template_view["profil"]); ?>
@@ -88,7 +88,4 @@
       </div>
     </div>
   </footer>
-
-
-  <script src="js/chat.js"></script>
 </body></html>
