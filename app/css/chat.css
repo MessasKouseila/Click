@@ -57,10 +57,3 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #555;
 }
-#parentChat
-{
-    position: relative;
-    display: inline-block;
-    width: 1200px;
-    height:760px;
-}
