@@ -16,7 +16,7 @@
   </style>
 </head><body>
 <nav class="navbar navbar-inverse" id="menu">
-  <div class="container-fluid" id="mainWindow">
+  <div class="container" id="mainWindow">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
