@@ -11,6 +11,7 @@
     <script src="js/jquery-ui.min.js"></script>
 </head>
 <body>
+<div class="container-fluid">
 <nav class="navbar navbar-inverse" id="menu">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -76,5 +77,6 @@
 </footer>
 <script src="js/chat.js"></script>
 <script src="js/logo.js"></script>
+</div>
 </body>
 </html>
