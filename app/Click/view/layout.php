@@ -19,7 +19,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="#" id="logo1">C L I C K</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -55,7 +55,7 @@
         </div>
             <div class="row" id="chat">
                 <?php include($template_view["chat"]); ?>
-                <script src="js/chat.js"></script>
+
             </div>
     </div>
     <div class="col-sm-6">
@@ -74,5 +74,7 @@
 <footer class="section section-primary">
 
 </footer>
+<script src="js/chat.js"></script>
+<script src="js/logo.js"></script>
 </body>
 </html>
