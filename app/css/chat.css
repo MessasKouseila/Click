@@ -59,7 +59,7 @@
 }
 #parentChat
 {
-    z-index: 1000;
+    z-index: 150;
     position: fixed;
     top:0px;
     left: 0px;
