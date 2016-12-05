@@ -4,5 +4,5 @@
 //resizeAndDrag
 $(function() {
     $( "#chat" ).draggable({ containment: "parentChat" });
-    $( "#chat" ).resizable();
+    $( "#chat" ).resizable({ containment: "parentChat" });
 });
