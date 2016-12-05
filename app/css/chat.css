@@ -59,7 +59,8 @@
 }
 #parentChat
 {
-    position: absolute;
+    z-index: 1000;
+    display: block;
     height: 100%;
     width: 100%;
 }
