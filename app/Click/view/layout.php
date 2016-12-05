@@ -81,13 +81,5 @@
 
   </footer>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 </body>
 </html>
-=======
-</body></html>
->>>>>>> 28aa2cc7ccfb5de228d8d66ef6376f2355eba714
-=======
-</body></html>
->>>>>>> a22d6864382e5cddd275b673d06603941cd53e39
