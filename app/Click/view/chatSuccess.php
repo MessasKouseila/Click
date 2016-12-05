@@ -38,8 +38,7 @@
                                     </small>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
+                                    aficher ici les messages du chat.
                                 </p>
                             </div>
                         </li>
