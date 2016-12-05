@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/chat.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
@@ -54,7 +55,7 @@
             <?php include($template_view["profil"]); ?>
         </div>
             <div class="row">
-                <?php include($template_view["chat"]); ?>
+                <?php include($templaand draggable jqueryte_view["chat"]); ?>
             </div>
     </div>
     <div class="col-sm-6">
