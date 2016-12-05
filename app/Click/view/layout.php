@@ -55,7 +55,7 @@
             <?php include($template_view["profil"]); ?>
         </div>
             <div class="row">
-                <?php include($templaand draggable jqueryte_view["chat"]); ?>
+                <?php include($template_view["chat"]); ?>
             </div>
     </div>
     <div class="col-sm-6">
