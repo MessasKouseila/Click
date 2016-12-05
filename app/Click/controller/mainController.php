@@ -70,7 +70,7 @@ class mainController{
     public static function  chat($request,$context){
         return context::SUCCESS;
     }
-    public static function messages($request,$context){
+    public static function mur($request,$context){
         $context->messages = messageTable::getUserMessageById(context::getSessionAttribute("utilisateur")->id);
         return context::SUCCESS;
     }
@@ -79,10 +79,12 @@ class mainController{
         return context::SUCCESS;
     }
     public static function index($request,$context){
-        $context->template["listeUsers"] = "listeUsers".self::listeUsers($request,$context);
-        $context->template["messages"] = "messages".self::message($request,$context);
-        $context->template["profil"] = "profil".self::message($request,$context);
-        $context->template["chat"] = "chat".self::message($request,$context);
+$context->template = array();        
+$context->template[] = "listeUsers";
+        $context->template[] = "mur";
+        $context->template[] = "chat";
+	$context->template[] = "profil";
+	$context->template[] = "statut";
         return context::SUCCESS;
     }
 
