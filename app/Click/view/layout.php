@@ -48,7 +48,7 @@
         </div>
     </div>
 </nav>
-<div class="container-fluid text-center">
+<div class="container-fluid text-center" id="contenuALL">
     <div class="col-sm-3">
         <div class="well" id="profil">
             <?php include($template_view["profil"]); ?>

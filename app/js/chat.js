@@ -3,6 +3,6 @@
  */
 //resizeAndDrag
 $(function() {
-    $( "#chat" ).draggable({ containment: "" });
-    $( "#chat" ).resizable({ containment: "" });
+    $( "#chat" ).draggable({ containment: "#contenuALL" });
+    $( "#chat" ).resizable({ containment: "#contenuALL" });
 });
