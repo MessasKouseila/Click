@@ -12,18 +12,18 @@
     border-bottom: 1px dotted #B3A9A9;
 }
 
-.chat li.left .chat-body
+.chat .left .chat-body
 {
     margin-left: 60px;
 }
 
-.chat li.right .chat-body
+.chat .right .chat-body
 {
     margin-right: 60px;
 }
 
 
-.chat li .chat-body p
+.chat .chat-body p
 {
     margin: 0;
     color: #777777;
@@ -56,4 +56,8 @@
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #555;
+}
+#parentChat
+{
+
 }
