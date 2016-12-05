@@ -59,7 +59,7 @@
 }
 #parentChat
 {
-    position: fixed;
+    position: relative;
     display: inline-block;
     width: 1200px;
     height:760px;
