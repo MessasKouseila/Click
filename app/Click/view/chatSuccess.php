@@ -1,4 +1,4 @@
-<div class="panel panel-primary" id="chat">
+<div class="panel panel-primary">
     <!-- menu du chat-->
     <div class="panel-heading">
         <span class="glyphicon glyphicon-comment"></span> Chat

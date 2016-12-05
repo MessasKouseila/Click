@@ -54,7 +54,7 @@
         <div class="well" id="profil">
             <?php include($template_view["profil"]); ?>
         </div>
-            <div class="row">
+            <div class="row" id="chat">
                 <?php include($template_view["chat"]); ?>
             </div>
     </div>
