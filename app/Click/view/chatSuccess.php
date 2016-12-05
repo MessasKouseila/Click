@@ -87,6 +87,5 @@
 </div >
 </div >
 </div >
-<script src="js/chat.js"></script>
 
 
