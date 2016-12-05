@@ -59,6 +59,7 @@
     </div>
     <div class="row" id="chat">
       <?php include($template_view["chat"]); ?>
+      <script src="js/chat.js"></script>
     </div>
     <div class="col-sm-7">
       <div class="row">
@@ -89,5 +90,5 @@
   </footer>
 
 
-
+  <script src="js/chat.js"></script>
 </body></html>
