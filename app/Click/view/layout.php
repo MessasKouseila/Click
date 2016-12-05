@@ -53,9 +53,8 @@
         <div class="well" id="profil">
             <?php include($template_view["profil"]); ?>
         </div>
-            <div class="row" id="chat">
+            <div class="row">
                 <?php include($template_view["chat"]); ?>
-
             </div>
     </div>
     <div class="col-sm-6">
