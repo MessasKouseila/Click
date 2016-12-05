@@ -53,12 +53,10 @@
         <div class="well" id="profil">
             <?php include($template_view["profil"]); ?>
         </div>
-        <div id="parentChat">
             <div class="row" id="chat">
                 <?php include($template_view["chat"]); ?>
                 <script src="js/chat.js"></script>
             </div>
-        </div>
     </div>
     <div class="col-sm-6">
         <div class="row">
