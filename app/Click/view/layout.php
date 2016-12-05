@@ -61,6 +61,7 @@
       <?php include($template_view["chat"]); ?>
       <script src="js/chat.js"></script>
     </div>
+  </div>
     <div class="col-sm-7">
       <div class="row">
         <div class="col-sm-12" id="statut">
@@ -69,23 +70,13 @@
       </div>
       <?php include($template_view["mur"]); ?>
 
-
-
     </div>
     <div class="col-sm-2" id="listeUser">
       <?php include($template_view["listeUsers"]); ?>
     </div>
   </div>
   <footer class="section section-primary">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <h1 contenteditable="true">Footer header</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
-            <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-            <br>Ut enim ad minim veniam, quis nostrud</p>
-        </div>
-      </div>
-    </div>
+
   </footer>
+
 </body></html>
