@@ -32,7 +32,7 @@ elseif($view!=context::NONE){
 	
 	foreach ($context->template as $key=>$value) {
 			
-		$template_view[$value] = $nameApp."/view/".$value.$context->executeAction($value, $_REQUEST).".php";
+		$template_view[$value] = $nameApp."/view/".$value.$context->executeAction($action, $_REQUEST).".php";
 	}
 	$template_view[$action]=$nameApp."/view/".$action.$view.".php";
 	include($nameApp."/view/".$context->getLayout().".php");
