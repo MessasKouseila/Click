@@ -9,14 +9,6 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <style>
-        /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-            color: white;
-            padding: 15px;
-        }
-    </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse" id="menu">
@@ -57,35 +49,32 @@
     </div>
 </nav>
 <div class="container-fluid text-center">
-    <div class="row">
-        <div class="col-sm-3">
-            <div class="well" id="profil">
-                <?php include($template_view["profil"]); ?>
-            </div>
-            <div id="parentChat">
-                <div class="row" id="chat">
-                    <?php include($template_view["chat"]); ?>
-                    <script src="js/chat.js"></script>
-                </div>
+    <div class="col-sm-3">
+        <div class="well" id="profil">
+            <?php include($template_view["profil"]); ?>
+        </div>
+        <div id="parentChat">
+            <div class="row" id="chat">
+                <?php include($template_view["chat"]); ?>
+                <script src="js/chat.js"></script>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="row">
-                <div class="col-sm-12" id="statut">
-                    <?php include($template_view["statut"]); ?>
-                </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-12" id="statut">
+                <?php include($template_view["statut"]); ?>
             </div>
-            <?php include($template_view["mur"]); ?>
+        </div>
+        <?php include($template_view["mur"]); ?>
 
-        </div>
-        <div class="col-sm-3" id="listeUser">
-            <?php include($template_view["listeUsers"]); ?>
-        </div>
+    </div>
+    <div class="col-sm-3" id="listeUser">
+        <?php include($template_view["listeUsers"]); ?>
     </div>
 </div>
 <footer class="section section-primary">
 
 </footer>
-
 </body>
 </html>
