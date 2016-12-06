@@ -40,6 +40,7 @@ class mainController{
     }
     public static function logout($request,$context){
         session_destroy();
+        context::setSessionAttribute("utilisateur", NULL);
         $context->notify = "Vous etes bien deconnecte";
         return context::SUCCESS;
     }
@@ -68,6 +69,7 @@ class mainController{
         return context::SUCCESS;
     }
     public static function  chat($request,$context){
+        $context->allChats = chatTable::getChats();
         return context::SUCCESS;
     }
     public static function mur($request,$context){
