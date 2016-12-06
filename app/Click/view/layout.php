@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/chat.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/login.css">
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
