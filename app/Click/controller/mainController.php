@@ -39,7 +39,6 @@ class mainController{
 
     }
     public static function logout($request,$context){
-        session_destroy();
         context::setSessionAttribute("utilisateur", NULL);
         $context->notify = "Vous etes bien deconnecte";
         return context::SUCCESS;
