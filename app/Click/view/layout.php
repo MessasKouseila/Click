@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/login.css">
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
 </head>
 <body>
 <nav class="navbar navbar-inverse" id="menu">
@@ -55,9 +53,9 @@
         <div class="well" id="profil">
             <?php include($template_view["profil"]); ?>
         </div>
-            <div class="row hidden-xs" id="chat">
-                <?php include($template_view["chat"]); ?>
-            </div>
+        <div class="row hidden-xs" id="chat">
+            <?php include($template_view["chat"]); ?>
+        </div>
     </div>
     <div class="col-sm-6">
         <?php include($template_view["statut"]); ?>
@@ -71,6 +69,10 @@
 <footer class="section section-primary">
 
 </footer>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap-toggle.min.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/logo.js"></script>
 </body>
