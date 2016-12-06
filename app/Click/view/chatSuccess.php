@@ -16,16 +16,12 @@
         </div>
     </div>
     <!-- messages dans le chat-->
-    <div class="row">
     <div class="panel-body">
         <ul class="chat">
             <?php foreach ($context->allChats as $chat): ?>
-            <div class="col-md-3 col-sm-3">
-                <li class="left clearfix"><span class="chat-img pull-left">
-                    <img src="<?php echo $chat->emetteur->avatar; ?>" alt="User Avatar" class="img-circle"/>
-                </span>
-            </div>
-            <div class="col-md-9 col-sm-9">
+            <li class="left clearfix"><span class="chat-img pull-left">
+                <img src="<?php echo $chat->emetteur->avatar; ?>" alt="User Avatar" class="img-circle"/>
+            </span>
                 <div class="chat-body clearfix">
                     <div class="header">
                         <strong class="primary-font"><?php echo $chat->emetteur->nom; ?></strong>
@@ -37,7 +33,6 @@
                         <?php echo $chat->post->texte; ?>
                     </p>
                 </div>
-            </div>
             </li>
             <?php endforeach; ?>
         </ul>
