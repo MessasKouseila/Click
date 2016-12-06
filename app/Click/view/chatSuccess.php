@@ -37,7 +37,6 @@
             <?php endforeach; ?>
         </ul>
     </div>
-    </div>
     <!-- footer du chat-->
     <div class="panel-footer">
         <div class="input-group">
