@@ -20,7 +20,7 @@
         <ul class="chat">
             <?php foreach ($context->allChats as $chat): ?>
             <li class="left clearfix"><span class="chat-img pull-left">
-                <img src="<?php echo $chat->emetteur->avatar; ?>" alt="User Avatar" class="img-circle"/>
+                <img src="<?php echo $chat->emetteur->avatar; ?>" alt="User Avatar" class="img-circle" width="50" height="50"/>
             </span>
                 <div class="chat-body clearfix">
                     <div class="header">
