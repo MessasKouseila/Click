@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5ac9c8c1-0d29-4bd0-bca2-0facfade552a" name="pedago" url="http://pedago02a.univ-avignon.fr">
+        <fileTransfer host="pedago02a.univ-avignon.fr" port="22" rootFolder="/nfs/nas02a_etudiants/inf/uapv1600147/public_html/Click" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
