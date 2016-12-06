@@ -58,7 +58,7 @@
                 <?php include($template_view["chat"]); ?>
             </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-7">
         <div class="row">
             <div class="col-sm-12" id="statut">
                 <?php include($template_view["statut"]); ?>
@@ -67,7 +67,7 @@
         <?php include($template_view["mur"]); ?>
 
     </div>
-    <div class="col-sm-3" id="listeUser">
+    <div class="col-sm-2" id="listeUser">
         <?php include($template_view["listeUsers"]); ?>
     </div>
 </div>

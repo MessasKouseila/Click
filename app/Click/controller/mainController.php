@@ -17,7 +17,7 @@ class mainController{
 
 
         if(context::getSessionAttribute("utilisateur") !== NULL) {
-          $context->redirect("Click.php?action=index");  
+            return context::SUCCESS;
         }
         else {
 
@@ -25,12 +25,11 @@ class mainController{
                 $user = utilisateurTable::getUserByLoginAndPass($request["login"],$request["passWord"]);
                 if (!isset($user)) {
                     $context->notify = "aucun utilisateur de ce type";
-			
                     return context::ERROR;
                 }
                 else {
                     context::setSessionAttribute("utilisateur",$user);
-               $context->redirect("Click.php?action=index"); 
+                    return context::SUCCESS;
                 }
             }
             else {
@@ -42,7 +41,7 @@ class mainController{
     public static function logout($request,$context){
         context::setSessionAttribute("utilisateur", NULL);
         $context->notify = "Vous etes bien deconnecte";
-        $context->redirect("Click.php?action=login");
+        return context::SUCCESS;
     }
     public static function showMessage($request,$context) {
         $user = context::getSessionAttribute("utilisateur");
@@ -73,7 +72,7 @@ class mainController{
         return context::SUCCESS;
     }
     public static function mur($request,$context){
-        $context->messages = messageTable::getMessages();
+        $context->messages = messageTable::getUserMessageById(context::getSessionAttribute("utilisateur")->id);
         return context::SUCCESS;
     }
     public static function statut($request,$context){
@@ -81,15 +80,12 @@ class mainController{
         return context::SUCCESS;
     }
     public static function index($request,$context){
-    	if(context::getSessionAttribute("utilisateur") === NULL) {
-    		$context->redirect("Click.php?action=login"); 	
-    	}
-    	$context->template = array();        
-    	$context->template[] = "listeUsers";
+        $context->template = array();
+        $context->template[] = "listeUsers";
         $context->template[] = "mur";
         $context->template[] = "chat";
-    	$context->template[] = "profil";
-    	$context->template[] = "statut";
+        $context->template[] = "profil";
+        $context->template[] = "statut";
         return context::SUCCESS;
     }
 
