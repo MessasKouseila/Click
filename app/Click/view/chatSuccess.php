@@ -26,7 +26,7 @@
                     <div class="header">
                         <strong class="primary-font"><?php echo $chat->emetteur->nom; ?></strong>
                         <small class="pull-right text-muted">
-                            <span class="glyphicon glyphicon-time"></span><?php echo $chat->post->date; ?>
+                            <span class="glyphicon glyphicon-time"></span><?php echo $chat->post->date->format('i'); ?>
                         </small>
                     </div>
                     <p>
