@@ -9,7 +9,7 @@
 				?>
 			<li class="list-group-item">
 				<img src="<?php echo $user->avatar ?>" class="img-circle" height="55" width="55" alt="Avatar">
-					<br><?php echo "Nom :". $user->nom ." Prenom " . $user->prenom ; ?>
+					<br><?php echo "". $user->nom ."<br>" . $user->prenom ; ?>
 				</li>
 
 			<?php endforeach; ?>
