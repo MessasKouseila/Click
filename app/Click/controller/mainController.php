@@ -1,91 +1,108 @@
 <?php
+
 /*
  * All doc on : ddd
  * Toutes les actions disponibles dans l'application 
  *
  */
 
-class mainController{
+class mainController
+{
 
-    public static function helloWorld($request,$context){
-        $context->mavariable="hello world".utilisateurTable::getUsers()[1]->id;
-        $context->notify ="ceci est un message d'erreur issue de l'action helloWorld";
+    public static function helloWorld($request, $context)
+    {
+        $context->mavariable = "hello world" . utilisateurTable::getUsers()[1]->id;
+        $context->notify = "ceci est un message d'erreur issue de l'action helloWorld";
         return context::SUCCESS;
     }
 
-    public static function login($request,$context){
+    public static function login($request, $context)
+    {
 
 
-        if(context::getSessionAttribute("utilisateur") !== NULL) {
+        if (context::getSessionAttribute("utilisateur") !== NULL) {
             return context::SUCCESS;
-        }
-        else {
+        } else {
 
-            if(isset($request["login"], $request["passWord"])) {
-                $user = utilisateurTable::getUserByLoginAndPass($request["login"],$request["passWord"]);
+            if (isset($request["login"], $request["passWord"])) {
+                $user = utilisateurTable::getUserByLoginAndPass($request["login"], $request["passWord"]);
                 if (!isset($user)) {
                     $context->notify = "aucun utilisateur de ce type";
                     return context::ERROR;
-                }
-                else {
-                    context::setSessionAttribute("utilisateur",$user);
+                } else {
+                    context::setSessionAttribute("utilisateur", $user);
                     return context::SUCCESS;
                 }
-            }
-            else {
+            } else {
                 return context::ERROR;
             }
         }
 
     }
-    public static function logout($request,$context){
+
+    public static function logout($request, $context)
+    {
         context::setSessionAttribute("utilisateur", NULL);
         $context->notify = "Vous etes bien deconnecte";
         return context::SUCCESS;
     }
-    public static function showMessage($request,$context) {
+
+    public static function showMessage($request, $context)
+    {
         $user = context::getSessionAttribute("utilisateur");
         if (isset($user)) {
             //id = $user->id;
             $messages = messageTable::getUserMessageById(35);
             $context->messages = $messages;
             return context::SUCCESS;
-        }
-        else {
+        } else {
             return context::ERROR;
         }
     }
 
-    public static function listeUsers($request,$context){
+    public static function listeUsers($request, $context)
+    {
         $context->users = utilisateurTable::getUsers();
         return context::SUCCESS;
     }
-    public static function profil($request,$context){
+
+    public static function profil($request, $context)
+    {
         $context->user = context::getSessionAttribute("utilisateur");
         return context::SUCCESS;
     }
-    public static function menu($request,$context){
+
+    public static function menu($request, $context)
+    {
         return context::SUCCESS;
     }
-    public static function  chat($request,$context){
+
+    public static function chat($request, $context)
+    {
         $context->allChats = chatTable::getChats();
         return context::SUCCESS;
     }
-    public static function mur($request,$context){
+
+    public static function mur($request, $context)
+    {
         $context->messages = messageTable::getMessages();
         return context::SUCCESS;
     }
-    public static function statut($request,$context){
+
+    public static function statut($request, $context)
+    {
         $context->user = context::getSessionAttribute("utilisateur");
         return context::SUCCESS;
     }
-    public static function index($request,$context){
-$context->template = array();        
-$context->template[] = "listeUsers";
+
+    public static function index($request, $context)
+    {
+        $context->template = array();
+        $context->template[] = "listeUsers";
         $context->template[] = "mur";
         $context->template[] = "chat";
-	$context->template[] = "profil";
-	$context->template[] = "statut";
+        $context->template[] = "profil";
+        $context->template[] = "statut";
         return context::SUCCESS;
     }
 

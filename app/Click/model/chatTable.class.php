@@ -43,8 +43,8 @@ class chatTable {
         $post->texte = $text;
         $post->date = new DateTime();
         $chat->post = $post;
-        $em->persist($chat);
-        $em->flush();
+        $chatRepository->persist($chat);
+        $chatRepository->flush();
     }
 
 

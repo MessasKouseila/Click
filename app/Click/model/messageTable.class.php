@@ -20,16 +20,17 @@ class messageTable {
 		}
 	}
 	public static function getMessages(){
-		$em = dbconnection::getInstance()->getEntityManager();
 
-		$userRepository = $em->getRepository('message');
-		$messages = $userRepository->findAll();	
-	
+		$em = dbconnection::getInstance()->getEntityManager();
+		$messageRepository = $em->getRepository('message');
+
+		$messages = $messageRepository->findAll();
 		if ($messages == false){
 			echo 'Erreur sql';
 		}
-		return $messages; 
+		return $messages;
 	}
+
 }
 
 ?>
