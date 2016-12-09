@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="css/chat.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
+    <link rel="stylesheet" href="css/listUser.css">
 </head>
 <body style="height:100% !important;">
 <nav class="navbar navbar-inverse" id="menu">
@@ -19,7 +20,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" id="logo1">C L I C K</a>
+            <a class="navbar-brand" href="" id="logo1">C L I C K</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -53,9 +54,9 @@
         <div class="well" id="profil">
             <?php include($template_view["profil"]); ?>
         </div>
-        <div class="row hidden-xs" id="chat">
-            <?php include($template_view["chat"]); ?>
-        </div>
+            <div class="row hidden-xs" id="chat">
+                <?php include($template_view["chat"]); ?>
+            </div>
     </div>
     <div class="col-sm-6">
         <div class="row">
@@ -79,5 +80,6 @@
 <script src="js/bootstrap-toggle.min.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/logo.js"></script>
+<script src="js/listUser.js"></script>
 </body>
 </html>

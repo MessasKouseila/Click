@@ -17,7 +17,7 @@ class mainController{
 
 
         if(context::getSessionAttribute("utilisateur") !== NULL) {
-            return context::SUCCESS;
+          $context->redirect("Click.php?action=index");  
         }
         else {
 
@@ -25,11 +25,12 @@ class mainController{
                 $user = utilisateurTable::getUserByLoginAndPass($request["login"],$request["passWord"]);
                 if (!isset($user)) {
                     $context->notify = "aucun utilisateur de ce type";
+			
                     return context::ERROR;
                 }
                 else {
                     context::setSessionAttribute("utilisateur",$user);
-                    return context::SUCCESS;
+               $context->redirect("Click.php?action=index"); 
                 }
             }
             else {
@@ -41,7 +42,7 @@ class mainController{
     public static function logout($request,$context){
         context::setSessionAttribute("utilisateur", NULL);
         $context->notify = "Vous etes bien deconnecte";
-        return context::SUCCESS;
+        $context->redirect("Click.php?action=login");
     }
     public static function showMessage($request,$context) {
         $user = context::getSessionAttribute("utilisateur");
@@ -80,12 +81,15 @@ class mainController{
         return context::SUCCESS;
     }
     public static function index($request,$context){
-$context->template = array();        
-$context->template[] = "listeUsers";
+    	if(context::getSessionAttribute("utilisateur") === NULL) {
+    		$context->redirect("Click.php?action=login"); 	
+    	}
+    	$context->template = array();        
+    	$context->template[] = "listeUsers";
         $context->template[] = "mur";
         $context->template[] = "chat";
-	$context->template[] = "profil";
-	$context->template[] = "statut";
+    	$context->template[] = "profil";
+    	$context->template[] = "statut";
         return context::SUCCESS;
     }
 
