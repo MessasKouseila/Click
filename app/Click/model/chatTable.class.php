@@ -34,19 +34,6 @@ class chatTable {
 		return $chat;	
 	}
 
-	public function setChat($user, $text){
-        $em = dbconnection::getInstance()->getEntityManager();
-        $chatRepository = $em->getRepository('chat');
-        $chat = new chat();
-        $chat->emetteur = $user;
-        $post = new post();
-        $post->texte = $text;
-        $post->date = new DateTime();
-        $chat->post = $post;
-        $chatRepository->persist($chat);
-        $chatRepository->flush();
-    }
-
 
 }
 
