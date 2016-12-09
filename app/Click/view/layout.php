@@ -4,13 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/bootstrap-toggle.css">
+    <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="css/chat.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/login.css">
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
 </head>
 <body style="height:100% !important;">
 <nav class="navbar navbar-inverse" id="menu">
@@ -75,6 +74,10 @@
 <footer class="section section-primary">
 
 </footer>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap-toggle.min.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/logo.js"></script>
 </body>
