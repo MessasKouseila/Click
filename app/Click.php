@@ -9,7 +9,7 @@ require_once $nameApp.'/controller/mainController.php';
 
 
 //action par défaut
-$action = "login";
+$action = "index";
 
 if(key_exists("action", $_REQUEST))
 	$action =  $_REQUEST['action'];
@@ -29,9 +29,8 @@ if($view===false){
 
 //inclusion du layout qui va lui meme inclure le template view
 elseif($view!=context::NONE){
-	
+	if( isset($context->template))
 	foreach ($context->template as $key=>$value) {
-			
 		$template_view[$value] = $nameApp."/view/".$value.$context->executeAction($value, $_REQUEST).".php";
 	}
 	$template_view[$action]=$nameApp."/view/".$action.$view.".php";

@@ -12,7 +12,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
 </head>
-<body>
+<body style="height:100% !important;">
 <nav class="navbar navbar-inverse" id="menu">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -50,7 +50,7 @@
         </div>
     </div>
 </nav>
-<div class="container-fluid text-center" id="contenuALL">
+<div class="container-fluid text-center" id="contenuALL" style="height:100% !important;">
     <div class="col-sm-3">
         <div class="well" id="profil">
             <?php include($template_view["profil"]); ?>

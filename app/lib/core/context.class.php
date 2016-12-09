@@ -6,7 +6,7 @@ class context{
     const ERROR="Error";
     const NONE="None";
     private $name;
-    public $template;
+    public $template = null;
     private static $instance=null;
 	
 	 /**
