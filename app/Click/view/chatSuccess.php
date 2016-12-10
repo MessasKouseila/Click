@@ -25,7 +25,7 @@
                     <div class="header">
                         <strong class="primary-font"><?php echo $chat->emetteur->nom; ?></strong>
                         <small class="pull-right text-muted">
-                            <span class="glyphicon glyphicon-time"></span><?php echo $chat->post->date->format('i'); ?>
+                            <span class="glyphicon glyphicon-time"></span><?php echo $chat->post->date->format('Y-m-d H:i:s'); ?>
                         </small>
                     </div>
                     <p>
@@ -38,12 +38,13 @@
     </div>
     <!-- footer du chat-->
     <div class="panel-footer">
-        <div class="input-group">
-            <input id="btn-input" type="text" class="form-control input-sm"
-                   placeholder="Type your message here..."/>
-            <span class="input-group-btn">
-                <button class="btn btn-warning btn-sm" id="btn-chat">Send</button>
-            </span>
-        </div>
+        <form method="post" action="Click.php?action=addToChat">
+            <div class="input-group">
+                <input id="btn-input" type="text" name="chat" class="form-control input-sm" placeholder="exprime toi"/>
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-warning btn-sm" id="btn-chat">Send</button>
+                </span>
+            </div>
+        </form>
     </div>
 </div>

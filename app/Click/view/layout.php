@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/listUser.css">
 </head>
 <body style="height:100% !important;">
-<nav class="navbar navbar-inverse" id="menu">
+<nav class="navbar navbar-inverse  nopadding" id="menu">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
