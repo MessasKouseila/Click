@@ -41,7 +41,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a>
+                    <a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $context->user->identifiant; ?> </a>
                 </li>
             </ul>
         </div>
@@ -60,6 +60,20 @@
         <div class="row">
             <div class="col-sm-12" id="statut">
                 <?php include($template_view["statut"]); ?>
+            </div>
+        </div>
+        <div class="well">
+            <div class="row">
+        <textarea class="form-control" rows="3" placeholder="Ecrivez votre message"></textarea>
+            </div>
+            <p></p>
+            <div class="row">
+            <a href="#" class="btn btn-info btn-lg pull-left ">
+                <span class="glyphicon glyphicon-picture"></span>
+            </a>
+                <a href="#" class="btn btn-info pull-right">
+                    Envoyer
+                </a>
             </div>
         </div>
         <?php include($template_view["mur"]); ?>

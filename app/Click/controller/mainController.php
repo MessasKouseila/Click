@@ -88,6 +88,7 @@ class mainController{
         return context::SUCCESS;
     }
     public static function index($request,$context){
+        $context->user = context::getSessionAttribute("utilisateur");
     	if(context::getSessionAttribute("utilisateur") === NULL) {
     		$context->redirect("Click.php?action=login"); 	
     	}

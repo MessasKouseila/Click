@@ -15,7 +15,7 @@
         </div>
 </div>
 
-<div class="row" id="chat">
+<div class="row" >
     <div class="col-sm-3">
         <div class="well">
             <p>Ecrit par:</p>
