@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/listUser.css">
 </head>
 <body style="height:100% !important;">
-<nav class="navbar navbar-inverse  nopadding" id="menu">
+<nav class="navbar navbar-inverse" id="menu">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -35,9 +35,7 @@
                 <div class="form-group input-group">
                     <input type="text" class="form-control" placeholder="Search..">
                     <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
-                  <span class="glyphicon glyphicon-search"></span>
-                </button>
+                <button class="btn btn-default" type="button">  .<span class="glyphicon glyphicon-search"> </span></button>
               </span>
                 </div>
             </form>

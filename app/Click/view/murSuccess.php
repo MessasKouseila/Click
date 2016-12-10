@@ -4,7 +4,7 @@
 <div class="row message" >
     <div class="col-sm-3">
         <div class="well">
-            <img src="<?php echo $context->message->emetteur->avatar?>" class="img-circle" height="55" width="55" alt="Avatar">
+            <img src="<?php echo ($context->user->avatar === NULL)?"image/default.jpeg":$context->user->avatar ;?>" class="img-circle" height="55" width="55" alt="Avatar">
         </div>
         
     </div>
