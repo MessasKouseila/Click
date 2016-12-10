@@ -76,7 +76,12 @@ class mainController{
         $user = context::getSessionAttribute("utilisateur");
         $userParam = utilisateurTable::getUserById($user->id);
         $text = $_POST["chat"];
-        chatTable::addChat($text, $userParam);
+        if ($userParam != NULL && strlen($text) != 0) {
+            chatTable::addChat($text, $userParam);
+        }
+        else {
+            $context->notify = "erreur lors de l'envoie";
+        }
         $context->redirect("Click.php?action=index");
     }
     public static function mur($request,$context){

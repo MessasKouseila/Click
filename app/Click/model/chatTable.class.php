@@ -46,6 +46,17 @@ class chatTable {
         $em->persist($chat);
         $em->flush();
     }
+    /*
+    public static function modifyChat($id, $user) {
+
+        $em = dbconnection::getInstance()->getEntityManager();
+        $chatRepository = $em->getRepository('chat');
+        $chat = $chatRepository->findOneBy(array('id' => $id));
+        $chat->emetteur = $user;
+        $em->persist($chat);
+        $em->flush();
+    }
+    */
 
 
 }
