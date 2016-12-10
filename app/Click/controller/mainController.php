@@ -72,6 +72,13 @@ class mainController{
         $context->allChats = chatTable::getChats();
         return context::SUCCESS;
     }
+    public static function addToChat($request,$context){
+        $user = context::getSessionAttribute("utilisateur");
+        $userParam = utilisateurTable::getUserById($user->id);
+        $text = $_POST["chat"];
+        chatTable::addChat($text, $userParam);
+        $context->redirect("Click.php?action=index");
+    }
     public static function mur($request,$context){
         $context->messages = messageTable::getMessages();
         return context::SUCCESS;

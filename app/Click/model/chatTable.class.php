@@ -34,6 +34,25 @@ class chatTable {
 		return $chat;	
 	}
 
+	public static function addChat($text, $user) {
+
+        $em = dbconnection::getInstance()->getEntityManager();
+        echo "ici ok 1";
+        $chat = new chat();
+        echo "ici ok 2";
+        $post = new Post();
+        echo "ici ok 3";
+        $post->texte = $text;
+        echo "ici ok 4";
+        $post->date = new DateTime();
+        $chat->emetteur = $user;
+        echo "ici ok 5";
+        $chat->post = $post;
+        echo "ici ok 6";
+        $em->persist($chat);
+        $em->flush();
+    }
+
 
 }
 
