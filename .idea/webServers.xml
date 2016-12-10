@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="5ac9c8c1-0d29-4bd0-bca2-0facfade552a" name="pedago" url="http://pedago02a.univ-avignon.fr">
-        <fileTransfer host="pedago02a.univ-avignon.fr" port="22" rootFolder="/nfs/nas02a_etudiants/inf/uapv1601678/public_html/Click" accessType="SFTP">
+        <fileTransfer host="pedago02a.univ-avignon.fr" port="22" rootFolder="/nfs/nas02a_etudiants/inf/uapv1600147" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
