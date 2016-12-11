@@ -62,7 +62,21 @@ class mainController{
         return context::SUCCESS;
     }
     public static function profil($request,$context){
-        $context->user = context::getSessionAttribute("utilisateur");
+        ///Redirection Si l'utilisateur n'est pas connecte
+        if(context::getSessionAttribute("utilisateur") === NULL) {
+            $context->redirect("Click.php?action=login");
+        }
+        // On verifie est ce qu'on veut consulter un profil
+        if(empty($request["user"])) {
+            $context->isuser = true;
+            $context->user = context::getSessionAttribute("utilisateur");
+        }
+        // SInon
+        else {
+            $context->usercur = context::getSessionAttribute("utilisateur");
+            $context->isuser = ($context->usercur->id == $request["user"]);
+            $context->user =  utilisateurTable::getUserById($request["user"]);
+        }
         return context::SUCCESS;
     }
     public static function menu($request,$context){
@@ -89,25 +103,66 @@ class mainController{
         return context::SUCCESS;
     }
     public static function statut($request,$context){
-        $context->user = context::getSessionAttribute("utilisateur");
+
+        ///Redirection Si l'utilisateur n'est pas connecte
+        if(context::getSessionAttribute("utilisateur") === NULL) {
+            $context->redirect("Click.php?action=login");
+        }
+        // On verifie est ce qu'on veut consulter un profil
+        if(empty($request["user"])) {
+            $context->isuser = true;
+            $context->user = context::getSessionAttribute("utilisateur");
+        }
+        // SInon
+        else {
+            $context->usercur = context::getSessionAttribute("utilisateur");
+            $context->isuser = ($context->usercur->id == $request["user"]);
+            $context->user =  utilisateurTable::getUserById($request["user"]);
+        }
+
+        if(!isset($request["user"]))
+            $context->isuser = true;
+        else
+            $context->isuser = ($context->user == $request["user"]);
         return context::SUCCESS;
     }
     public function  ecrire_message($request,$context)
     {
+        if(!isset($request["user"]))
+            $context->to = NULL;
+        else
+            $context->to = utilisateurTable::getUserById($request["user"]);
         return context::SUCCESS;
     }
     public static function index($request,$context){
-        $context->user = context::getSessionAttribute("utilisateur");
-    	if(context::getSessionAttribute("utilisateur") === NULL) {
-    		$context->redirect("Click.php?action=login"); 	
-    	}
-    	$context->template = array();        
+        ///Redirection Si l'utilisateur n'est pas connecte
+        if(context::getSessionAttribute("utilisateur") === NULL) {
+            $context->redirect("Click.php?action=login");
+        }
+        // On verifie est ce qu'on veut consulter un profil
+       if(empty($request["user"])) {
+           $context->isuser = true;
+           $context->user = context::getSessionAttribute("utilisateur");
+       }
+        // SInon
+       else {
+           $context->usercur = context::getSessionAttribute("utilisateur");
+           $context->user =  utilisateurTable::getUserById($request["user"]);
+           $context->isuser = ($context->usercur->id == $context->user->id);
+
+       }
+
     	$context->template[] = "listeUsers";
         $context->template[] = "mur";
         $context->template[] = "chat";
     	$context->template[] = "profil";
     	$context->template[] = "statut";
-        $context->template[] = "ecrire_message";
+        if(!$context->isuser) {
+            $context->template[] = "ecrire_message";
+            $context->givewrite = true ;
+        }
+        else
+            $context->givewrite = false;
         return context::SUCCESS;
     }
 

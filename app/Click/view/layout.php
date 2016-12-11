@@ -36,7 +36,7 @@
             </ul>
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group input-group">
-                    <input type="text" class="form-control" placeholder="Search..">
+                    <input type="text" class="form-control" placeholder="Rechercher">
                     <span class="input-group-btn">
                 <button class="btn btn-default" type="button">  .<span class="glyphicon glyphicon-search"> </span></button>
               </span>
@@ -44,9 +44,9 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $context->user->identifiant; ?> </a>
+                    <a href="Click.php?action=index"><span class="glyphicon glyphicon-user"></span> </a>
                 </li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-out"></a></li>
+                <li><a href="Click.php?action=logout"><span class="glyphicon glyphicon-log-out"></a></li>
             </ul>
         </div>
     </div>
@@ -66,7 +66,9 @@
                 <?php include($template_view["statut"]); ?>
             </div>
         </div>
-        <?php include($template_view["ecrire_message"]); ?>
+        <?php if( $context->givewrite ) : ?>
+            <?php include($template_view["ecrire_message"]); ?>
+        <?php endif; ?>
         <?php include($template_view["mur"]); ?>
 
     </div>
