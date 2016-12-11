@@ -87,6 +87,11 @@ class mainController{
         $context->user = context::getSessionAttribute("utilisateur");
         return context::SUCCESS;
     }
+    public function  ecrire_message($request,$context)
+    {
+
+        return context::SUCCESS;
+    }
     public static function index($request,$context){
         $context->user = context::getSessionAttribute("utilisateur");
     	if(context::getSessionAttribute("utilisateur") === NULL) {
@@ -98,6 +103,7 @@ class mainController{
         $context->template[] = "chat";
     	$context->template[] = "profil";
     	$context->template[] = "statut";
+        $context->template[] = "ecrire_message";
         return context::SUCCESS;
     }
 

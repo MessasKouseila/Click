@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/listUser.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <script src="js/jquery.js"></script>
 </head>
+
 <body style="height:100% !important;">
-<nav class="navbar navbar-inverse" id="menu">
+<nav class="navbar navbar-default" id="menu">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -43,6 +46,7 @@
                 <li>
                     <a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $context->user->identifiant; ?> </a>
                 </li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-out"></a></li>
             </ul>
         </div>
     </div>
@@ -62,20 +66,7 @@
                 <?php include($template_view["statut"]); ?>
             </div>
         </div>
-        <div class="well">
-            <div class="row">
-        <textarea class="form-control" rows="3" placeholder="Ecrivez votre message"></textarea>
-            </div>
-            <p></p>
-            <div class="row">
-            <a href="#" class="btn btn-info btn-lg pull-left ">
-                <span class="glyphicon glyphicon-picture"></span>
-            </a>
-                <a href="#" class="btn btn-info pull-right">
-                    Envoyer
-                </a>
-            </div>
-        </div>
+        <?php include($template_view["ecrire_message"]); ?>
         <?php include($template_view["mur"]); ?>
 
     </div>
