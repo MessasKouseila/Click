@@ -59,10 +59,33 @@
 }
 .nopadding
 {
-    padding: 1px !important;
+    padding: 3px !important;
     margin: 0 !important;
 }
-#chat
+#containerChat
 {
     z-index: 1000;
+    position: fixed;
+    left: 10px;
+    right: auto;
+    top: auto;
+    bottom: 2px;
+    height: 55%;
 }
+#headChat
+{
+    position: relative;
+    height: auto;
+}
+#bodyChat
+{
+    position: relative;
+    height: 75%;
+}
+#footerChat
+{
+    position: relative;
+    height: 10%;
+}
+
+

@@ -56,9 +56,9 @@
         <div class="well" id="profil">
             <?php include($template_view["profil"]); ?>
         </div>
-            <div class="row hidden-xs" id="chat">
-                <?php include($template_view["chat"]); ?>
-            </div>
+        <div class="hidden-xs">
+            <?php include($template_view["chat"]); ?>
+        </div>
     </div>
     <div class="col-sm-6">
         <div class="row">

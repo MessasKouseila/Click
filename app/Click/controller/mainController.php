@@ -94,7 +94,6 @@ class mainController{
     }
     public function  ecrire_message($request,$context)
     {
-
         return context::SUCCESS;
     }
     public static function index($request,$context){
