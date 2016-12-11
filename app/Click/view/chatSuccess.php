@@ -1,7 +1,7 @@
 <div class="panel panel-primary roundTopLeft roundTopRight nopadding" id="containerChat">
     <!-- menu du chat-->
     <div class="panel-heading nopadding" id="headChat">
-        <span class="pull-left" >
+        <span class="pull-left" id="boutondrag">
         <input id="chatdrag" class="pull-left" checked data-toggle="toggle" type="checkbox">
             </span>
         <span class="glyphicon glyphicon-comment"></span>  Chat
