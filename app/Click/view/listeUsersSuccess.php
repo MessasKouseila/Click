@@ -1,4 +1,4 @@
-<div class="panel panel-primary fixed-bottom definelong">
+<div class="panel panel-primary fixed-bottom definelong nopadding" id="containerListU">
 	<div class="panel-heading">
 		<h3 class="panel-title">Liste Utilisateur</h3>
 	</div>

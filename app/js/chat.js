@@ -13,8 +13,8 @@ $(function () {
             handles: "s, n, w, e",
             maxHeight: 650,
             maxWidth: 600,
-            minHeight: 300,
-            minWidth: 300
+            minHeight: 310,
+            minWidth: 310
 
         }
     );
