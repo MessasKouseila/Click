@@ -1,4 +1,4 @@
-<div class="panel panel-primary roundTopLeft roundTopRight nopadding" id="containerChat">
+<div id="containerChat" class="panel panel-primary roundTopLeft roundTopRight nopadding">
     <!-- menu du chat-->
     <div class="panel-heading nopadding" id="headChat">
         <span class="pull-left" id="boutondrag">

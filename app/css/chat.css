@@ -64,13 +64,13 @@
 }
 #containerChat
 {
-    z-index: 1000;
+    z-index: 99999;
     position: fixed;
     left: 10px;
     right: auto;
     top: auto;
-    bottom: 2px;
-    height: 55%;
+    bottom: 5px;
+    height: 53%;
     width: auto;
 }
 #headChat
@@ -96,6 +96,14 @@
     bottom: 2px;
     top: 2px;
     height: 25px;
+}
+#limiteChat
+{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100vh;
+    width: 100vw;
 }
 .switch {
     position: relative;
