@@ -13,17 +13,13 @@
             <a href="#" class="btn btn-info pull-right">
                 Envoyer
             </a>
+            <div class=" pull-left" id="image">
+
+            </div>
         </div>
         <input type="file" class="hide" id="fichierMessage" name="image">
     </form>
-<script>
-   $("#imageMessage").click( function () {
-           alert("aaaa");
-           $("#fichierMessage").trigger("click")
-   }
-        );
-
-</script>
+<script src="js/ecrire_message"></script>
 </div>
 
 
