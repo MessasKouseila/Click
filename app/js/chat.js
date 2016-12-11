@@ -18,7 +18,6 @@ $(function () {
 
         }
     );
-    $("#chatdrag").css({left:10});
     $("#chatdrag").change(function () {
         if ($("#containerChat").draggable("option", "disabled") == true) {
             $("#containerChat").draggable("option", "disabled", false);
