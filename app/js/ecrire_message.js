@@ -1,6 +1,3 @@
-/**
- * Created by pc on 11/12/2016.
- */
 $("#imageMessage").click( function () {
 
         $("#fichierMessage").trigger("click");

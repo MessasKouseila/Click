@@ -28,10 +28,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Messages</a>
+                    <a href="Click.php?action=index">Accueil</a>
                 </li>
             </ul>
             <form class="navbar-form navbar-right" role="search">
@@ -66,9 +63,9 @@
                 <?php include($template_view["statut"]); ?>
             </div>
         </div>
-        <?php if( $context->givewrite ) : ?>
+
             <?php include($template_view["ecrire_message"]); ?>
-        <?php endif; ?>
+
         <?php include($template_view["mur"]); ?>
 
     </div>
@@ -85,6 +82,5 @@
 <script src="js/bootstrap-toggle.min.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/logo.js"></script>
-<script src="js/listUser.js"></script>
 </body>
 </html>

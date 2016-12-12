@@ -120,15 +120,11 @@ class mainController{
             $context->user =  utilisateurTable::getUserById($request["user"]);
         }
 
-        if(!isset($request["user"]))
-            $context->isuser = true;
-        else
-            $context->isuser = ($context->user == $request["user"]);
         return context::SUCCESS;
     }
     public function  ecrire_message($request,$context)
     {
-        if(!isset($request["user"]))
+        if(empty($request["user"]))
             $context->to = NULL;
         else
             $context->to = utilisateurTable::getUserById($request["user"]);
@@ -157,12 +153,8 @@ class mainController{
         $context->template[] = "chat";
     	$context->template[] = "profil";
     	$context->template[] = "statut";
-        if(!$context->isuser) {
-            $context->template[] = "ecrire_message";
-            $context->givewrite = true ;
-        }
-        else
-            $context->givewrite = false;
+        $context->template[] = "ecrire_message";
+
         return context::SUCCESS;
     }
 
