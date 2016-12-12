@@ -73,6 +73,11 @@
     height: 53%;
     width: auto;
 }
+.hiddenMessage
+{
+    max-height: 31px;
+    overflow: hidden;
+}
 #headChat
 {
     position: relative;

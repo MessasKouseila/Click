@@ -25,4 +25,23 @@ $(function () {
             $("#containerChat").draggable("option", "disabled", true);
         }
     });
+    $(document).ready(function() {
+        var val = $("#containerChat").height();
+        $("#containerChat").toggleClass("hiddenMessage");
+        $("#agrandire").html('<span class=" pull-right glyphicon glyphicon-minus"></span>');
+        $("#agrandire").click(
+            function() {
+                var c = $("#containerChat").hasClass("hiddenMessage");
+                if (c){
+                    $(this).html('<span class="pull-right glyphicon glyphicon-modal-window"></span>');
+                } else {
+                    $("#agrandire").html('<span class=" pull-right glyphicon glyphicon-minus"></span>');
+                }
+                $("#containerChat").toggleClass("hiddenMessage");
+                return false;
+            });
+    });
+
 });
+
+
