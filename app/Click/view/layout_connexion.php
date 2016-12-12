@@ -4,10 +4,9 @@
 	<meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
-    <link rel="stylesheet" href="css/bootstrap-toggle.css">
     <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="css/login.css">
-    <title>Ton appli !</title>
+    <title>Click</title>
 </head>
 <body>
 <div class="container-fluid nopadding">

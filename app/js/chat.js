@@ -3,14 +3,26 @@
  */
 //resizeAndDrag
 $(function () {
-    $("#chat").draggable({containment: "#contenuALL"});
-    $("#chat").resizable({containment: "#contenuALL"});
+    $("#containerChat").draggable(
+        {
+            containment: "#contenuALL"
+        }
+            ).resizable(
+        {
+            containment: "#contenuALL",
+            handles: "s, n, w, e",
+            maxHeight: 650,
+            maxWidth: 600,
+            minHeight: 310,
+            minWidth: 310
 
+        }
+    );
     $("#chatdrag").change(function () {
-        if ($("#chat").draggable("option", "disabled") == true) {
-            $("#chat").draggable("option", "disabled", false);
+        if ($("#containerChat").draggable("option", "disabled") == true) {
+            $("#containerChat").draggable("option", "disabled", false);
         } else {
-            $("#chat").draggable("option", "disabled", true);
+            $("#containerChat").draggable("option", "disabled", true);
         }
     });
 });

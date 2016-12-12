@@ -34,6 +34,30 @@ class chatTable {
 		return $chat;	
 	}
 
+	public static function addChat($text, $user) {
+
+        $em = dbconnection::getInstance()->getEntityManager();
+        $chat = new chat();
+        $post = new Post();
+        $post->texte = $text;
+        $post->date = new DateTime();
+        $chat->emetteur = $user;
+        $chat->post = $post;
+        $em->persist($chat);
+        $em->flush();
+    }
+    /*
+    public static function modifyChat($id, $user) {
+
+        $em = dbconnection::getInstance()->getEntityManager();
+        $chatRepository = $em->getRepository('chat');
+        $chat = $chatRepository->findOneBy(array('id' => $id));
+        $chat->emetteur = $user;
+        $em->persist($chat);
+        $em->flush();
+    }
+    */
+
 
 }
 

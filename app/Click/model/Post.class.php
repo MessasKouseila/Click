@@ -19,7 +19,11 @@ class post{
 
 	/** @Column(type="datetime") */ 
 	public $date;
-	
+
+	public function __construct()
+	{
+	}
+
 }
 
 ?>
