@@ -33,9 +33,9 @@ $(function () {
             function() {
                 var c = $("#containerChat").hasClass("hiddenMessage");
                 if (c){
-                    $(this).html('<span class="pull-right glyphicon glyphicon-modal-window"></span>');
-                } else {
                     $("#agrandire").html('<span class=" pull-right glyphicon glyphicon-minus"></span>');
+                } else {
+                    $(this).html('<span class="pull-right glyphicon glyphicon-modal-window"></span>');
                 }
                 $("#containerChat").toggleClass("hiddenMessage");
                 return false;
