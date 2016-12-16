@@ -18,8 +18,8 @@ $.ajax({
 
        success : function(code_html, statut){
 
-        $("#notify").html("Vous etes bien deconnecte");
-        $("#contain").html(code_html);
+	$("#notify").("Vous etes bien deconnecte")
+           $("#contain").(code_html);
 
        },
 

@@ -30,6 +30,9 @@ class chat{
   */
 
 	public $post;
+    public function __construct() {
+
+    }
 }
 
 ?>

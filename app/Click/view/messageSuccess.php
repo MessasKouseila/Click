@@ -1,54 +1,37 @@
-<?php
-	foreach ($context->messages as $message) :
-?>
-<div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-           <p> </p>
-           <img src="<?php echo $message->avatar; ?>" class="img-circle" height="55" width="55" alt="Avatar">
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="well">
-            <p><?php echo $message->post->texte; ?></p>
-          </div>
-        </div>
-</div>
-
-<div class="row" id="chat">
+<div class="row message" >
     <div class="col-sm-3">
-        <div class="well">
-            <p>Ecrit par:</p>
-            <p><?php echo $message->emetteur->nom ." ". $message->emetteur->prenom; ?></p>
-            <img src="<?php echo $context->message->emetteur->avatar?>" class="img-circle" height="55" width="55" alt="Avatar">
+        <div class="well container-fluid">
+            <a href="<?php echo "Click.php?action=index&user=".$message->emetteur->id ?>"> <img src="<?php echo ($message->emetteur->avatar === NULL)?"image/default.jpeg":$message->emetteur->avatar ;?>" class="img-circle" height="60" width="60" alt="Avatar">
+            <br>
+                <?php echo $message->emetteur->nom."<br>".$message->emetteur->prenom ?>
+            </a>
         </div>
-        <div class="well">
-            <p>Destinataire:</p>
-            <p><?php echo $message->destinataire->nom ." ". $message->destinataire->prenom; ?></p>
-            <img src="<?php echo $context->message->destinataire->avatar ?>" class="img-circle" height="55" width="55" alt="Avatar">
-        </div>
-        <div class="well">
-            <p>Partager par:</p>
-            <p><?php echo $message->parent->nom ." ". $message->parent->prenom; ?></p>
-            <img src="<?php echo $context->message->parent->avatar; ?>" class="img-circle" height="55" width="55" alt="Avatar">
-        </div>
+
     </div>
     <div class="col-sm-9">
         <div class="well">
+            <?php if($message->parent !== NULL) : ?>
+            <div class="row pull-left">
+                <a href="<?php echo "Click.php?action=index&user=".$message->parent->id ?>"> <img src="<?php echo ($message->parent->avatar === NULL)?"image/default.jpeg":$message->parent->avatar ;?>" class="img-circle" height="30" width="30" alt="Avatar"> <?php echo $message->emetteur->nom." ".$message->emetteur->prenom ?></a>
+            </div>
+            <?php endif; ?>
             <div class="row">
                 <div class="col-md-12">
-                    <a href="#"><img src="<?php echo $message->post->image ?>" class="img-responsive"></a>
+                    <img src="<?php echo $message->post->image ?>" class="img-responsive">
                 </div>
             </div>
             <p><?php echo $message->post->texte; ?></p>
             <div class="row">
                 <button type="button" class="btn btn-primary btn-xs pull-left">
-                    <span class="glyphicon glyphicon-thumbs-up"></span>Aimer
-                    <span class="badge">42</span>
+                    <span class="glyphicon glyphicon-thumbs-up"></span> Click
+                    <span class="badge"><?php echo$message->aime; ?></span>
                 </button>
-                <p class="pull-right">Publie le : <?php echo $message->post->date ?></p>
+                <button type="button" class="btn  btn-default btn-xs" > Partager </button>
+                <p class="pull-right">Publie il y'a: <?php echo date_diff($message->post->date,new DateTime("now"))->format('%a days'); ?></p>
             </div>
         </div>
     </div>
 </div>
-<?php endforeach; ?>
+
+
+

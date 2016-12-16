@@ -45,7 +45,7 @@ class message{
 
 /**
 
-  * @OneToOne(targetEntity="Post", cascade={"persist"})
+  * @ManyToOne(targetEntity="Post", cascade={"persist"})
 
   * @JoinColumn(name="post", referencedColumnName ="id")
 

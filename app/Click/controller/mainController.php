@@ -62,7 +62,21 @@ class mainController{
         return context::SUCCESS;
     }
     public static function profil($request,$context){
-        $context->user = context::getSessionAttribute("utilisateur");
+        ///Redirection Si l'utilisateur n'est pas connecte
+        if(context::getSessionAttribute("utilisateur") === NULL) {
+            $context->redirect("Click.php?action=login");
+        }
+        // On verifie est ce qu'on veut consulter un profil
+        if(empty($request["user"])) {
+            $context->isuser = true;
+            $context->user = context::getSessionAttribute("utilisateur");
+        }
+        // SInon
+        else {
+            $context->usercur = context::getSessionAttribute("utilisateur");
+            $context->isuser = ($context->usercur->id == $request["user"]);
+            $context->user =  utilisateurTable::getUserById($request["user"]);
+        }
         return context::SUCCESS;
     }
     public static function menu($request,$context){
@@ -72,24 +86,79 @@ class mainController{
         $context->allChats = chatTable::getChats();
         return context::SUCCESS;
     }
+    public static function actuChat($request,$context){
+        //$limit = $_POST["id"];
+        $context->allChats = chatTable::getLastChats(200);
+        return context::SUCCESS;
+    }
+    public static function addToChat($request,$context){
+        $user = context::getSessionAttribute("utilisateur");
+        $userParam = utilisateurTable::getUserById($user->id);
+        $text = $_POST["chat"];
+        if ($userParam != NULL && strlen($text) != 0) {
+            chatTable::addChat($text, $userParam);
+        }
+        else {
+            $context->notify = "erreur lors de l'envoie";
+        }
+    }
     public static function mur($request,$context){
         $context->messages = messageTable::getMessages();
         return context::SUCCESS;
     }
     public static function statut($request,$context){
-        $context->user = context::getSessionAttribute("utilisateur");
+
+        ///Redirection Si l'utilisateur n'est pas connecte
+        if(context::getSessionAttribute("utilisateur") === NULL) {
+            $context->redirect("Click.php?action=login");
+        }
+        // On verifie est ce qu'on veut consulter un profil
+        if(empty($request["user"])) {
+            $context->isuser = true;
+            $context->user = context::getSessionAttribute("utilisateur");
+        }
+        // SInon
+        else {
+            $context->usercur = context::getSessionAttribute("utilisateur");
+            $context->isuser = ($context->usercur->id == $request["user"]);
+            $context->user =  utilisateurTable::getUserById($request["user"]);
+        }
+
+        return context::SUCCESS;
+    }
+    public function  ecrire_message($request,$context)
+    {
+        if(empty($request["user"]))
+            $context->to = NULL;
+        else
+            $context->to = utilisateurTable::getUserById($request["user"]);
         return context::SUCCESS;
     }
     public static function index($request,$context){
-    	if(context::getSessionAttribute("utilisateur") === NULL) {
-    		$context->redirect("Click.php?action=login"); 	
-    	}
-    	$context->template = array();        
+        ///Redirection Si l'utilisateur n'est pas connecte
+        if(context::getSessionAttribute("utilisateur") === NULL) {
+            $context->redirect("Click.php?action=login");
+        }
+        // On verifie est ce qu'on veut consulter un profil
+       if(empty($request["user"])) {
+           $context->isuser = true;
+           $context->user = context::getSessionAttribute("utilisateur");
+       }
+        // SInon
+       else {
+           $context->usercur = context::getSessionAttribute("utilisateur");
+           $context->user =  utilisateurTable::getUserById($request["user"]);
+           $context->isuser = ($context->usercur->id == $context->user->id);
+
+       }
+
     	$context->template[] = "listeUsers";
         $context->template[] = "mur";
         $context->template[] = "chat";
     	$context->template[] = "profil";
     	$context->template[] = "statut";
+        $context->template[] = "ecrire_message";
+
         return context::SUCCESS;
     }
 

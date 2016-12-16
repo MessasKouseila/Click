@@ -12,6 +12,9 @@ require_once 'core/dbconnection.class.php' ;
 // Chargement automatique de toutes les classes en lien avec le modèle de données
 function autoloadClassModel($class){
         global $nameApp;
+        if ($class == "post") {
+            $class = "Post";
+        }
         require_once $nameApp . '/model/' . $class . '.class.php';
 }
 spl_autoload_register('autoloadClassModel');
