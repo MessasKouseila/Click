@@ -4,14 +4,12 @@
     margin: 0;
     padding: 0;
 }
-
 .chat li
 {
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #B3A9A9;
+    background-color: #9ca79f;
+    font-family: monospace;
+    color: #080808;
 }
-
 .chat .left .chat-body
 {
     margin-left: 60px;

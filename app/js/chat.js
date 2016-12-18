@@ -123,5 +123,5 @@ function updateChat() {
         complete: function (resultat, statut) {
         }
     });
-    setTimeout(updateChat, 5000);
+    setTimeout(updateChat, 8000);
 }
