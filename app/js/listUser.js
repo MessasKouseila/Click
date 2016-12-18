@@ -6,6 +6,7 @@ $( function() {
         // Most effect types need no options passed by default
         var options = {};
         // some effects have required parameters
+
         if ( selectedEffect === "scale" ) {
             options = { percent: 50 };
         } else if ( selectedEffect === "size" ) {
