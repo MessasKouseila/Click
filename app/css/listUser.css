@@ -1,15 +1,30 @@
+#listeUser
+{
+    z-index: 1000;
+    position: fixed;
+    right: 10px;
+    left: auto;
+    bottom: 3px;
+    top: 72px;
+    height: 85%;
+    width: 25%;
+}
 #effect
 {
     position: absolute;
-    left: auto;
-    right: 10px;
-    top: 72px;
-    bottom: auto;
-    height: 93%;
+    bottom: 0;
+    height: 100%;
+    width: 85%;
 }
-.definelong
+#bodyuser
 {
-    height: 87% !important;
+    position: relative;
+    height: 90%;
+}
+#elements
+{
+    position: relative;
+    height: 100%;
 }
 #userItem
 {

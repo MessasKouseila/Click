@@ -8,8 +8,8 @@
 		</span>
 		<h3 class="panel-title">Liste Utilisateur</h3>
 	</div>
-	<div class="panel-body definelong nopadding" >
-		<ul class="list-group">
+	<div class="panel-body nopadding" id="bodyuser">
+		<ul class="list-group nopadding" id="elements">
 			<?php
 			foreach ($context->users as $user) :
 				?>

@@ -28,7 +28,11 @@ $(function () {
         $("#containerChat").draggable("option", "disabled", true);
         $("#agrandire").click(
             function () {
+                $("#headChat").toggleClass("hideON");
                 $("#containerChat").toggleClass("hiddenMessage");
+                $("#bodyChat").toggleClass("hidden");
+                $("#footerChat").toggleClass("hidden");
+
                 var c = $("#containerChat").hasClass("hiddenMessage");
                 if (c) {
                     $("#agrandire").toggleClass("glyphicon-minus");

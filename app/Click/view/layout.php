@@ -60,19 +60,15 @@
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="row">
-                <div class="col-sm-12" id="statut">
+                <div id="statut">
                     <?php include($template_view["statut"]); ?>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12" id="send_Message">
+                <div id="send_Message">
                     <?php include($template_view["ecrire_message"]); ?>
                 </div>
-            </div>
-
-            <?php include($template_view["mur"]); ?>
-
+                <div id="mur">
+                    <?php include($template_view["mur"]); ?>
+                </div>
         </div>
         <div class="col-sm-3" id="listeUser">
             <?php include($template_view["listeUsers"]); ?>
