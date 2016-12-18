@@ -13,6 +13,7 @@ $( function() {
             options = { to: { width: 200, height: 60 } };
         }
         // Run the effect
+
         $( "#effect" ).toggle( "blind", options, 500 );
     };
 
