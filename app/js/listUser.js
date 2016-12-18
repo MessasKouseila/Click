@@ -14,7 +14,9 @@ $( function() {
         // Run the effect
         $( "#effect" ).toggle( "blind", options, 500 );
     };
+
     // Set effect from select menu value
+
     $( "#animation" ).on( "click", function() {
         $( "#animation" ).addClass("hide");
         runEffect();
