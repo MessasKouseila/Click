@@ -1,8 +1,9 @@
 <html>
 <head>
-    <title>Click -</title>
+    <title>C l i c k</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="image/icon.png" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
@@ -48,39 +49,46 @@
         </div>
     </div>
 </nav>
-<div class="container-fluid text-center" id="contenuALL" style="height:100% !important;">
-    <div class="col-sm-3">
-        <div class="well" id="profil">
-            <?php include($template_view["profil"]); ?>
-        </div>
-        <div class="hidden-xs">
-            <?php include($template_view["chat"]); ?>
-        </div>
+<div class="container-fluid text-center" id="contenuALL">
+    <div class="hidden-xs" id="limiteChat">
+        <?php include($template_view["chat"]); ?>
     </div>
-    <div class="col-sm-6">
-        <div class="row">
-            <div class="col-sm-12" id="statut">
-                <?php include($template_view["statut"]); ?>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="well" id="profil">
+                <?php include($template_view["profil"]); ?>
             </div>
         </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12" id="statut">
+                    <?php include($template_view["statut"]); ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" id="send_Message">
+                    <?php include($template_view["ecrire_message"]); ?>
+                </div>
+            </div>
 
-            <?php include($template_view["ecrire_message"]); ?>
+            <?php include($template_view["mur"]); ?>
 
-        <?php include($template_view["mur"]); ?>
-
+        </div>
+        <div class="col-sm-3" id="listeUser">
+            <?php include($template_view["listeUsers"]); ?>
+        </div>
     </div>
-    <div class="col-sm-3" id="listeUser">
-        <?php include($template_view["listeUsers"]); ?>
-    </div>
+    <footer class="section section-primary">
+
+    </footer>
 </div>
-<footer class="section section-primary">
-
-</footer>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/bootstrap-toggle.min.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/logo.js"></script>
+<script src="js/listUser.js"></script>
+
 </body>
 </html>

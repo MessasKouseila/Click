@@ -17,7 +17,6 @@ class chatTable {
 		}
 		return $chats;
 	}
-
 	public function getLastChats() {
 		
 		$em = dbconnection::getInstance()->getEntityManager();
@@ -34,6 +33,18 @@ class chatTable {
 		return $chat;	
 	}
 
+	public function getChatsAfterId($id) {
+		$em = dbconnection::getInstance()->getEntityManager();
+		$qb = $em->createQueryBuilder();
+		$qb->select('c')
+			->from('chat', 'c')
+			->where('c.id > :id')
+			->setParameter('id', $id);
+		return $qb
+			->getQuery()
+			->getResult();
+	}
+
 	public static function addChat($text, $user) {
 
         $em = dbconnection::getInstance()->getEntityManager();
@@ -46,19 +57,6 @@ class chatTable {
         $em->persist($chat);
         $em->flush();
     }
-    /*
-    public static function modifyChat($id, $user) {
-
-        $em = dbconnection::getInstance()->getEntityManager();
-        $chatRepository = $em->getRepository('chat');
-        $chat = $chatRepository->findOneBy(array('id' => $id));
-        $chat->emetteur = $user;
-        $em->persist($chat);
-        $em->flush();
-    }
-    */
-
-
 }
 
 ?>

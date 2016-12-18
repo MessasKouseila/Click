@@ -64,14 +64,15 @@
 }
 #containerChat
 {
-    z-index: 99999;
-    position: fixed;
+    z-index: 100000000;
+    position: absolute;
     left: 10px;
     right: auto;
     top: auto;
     bottom: 5px;
     height: 53%;
-    width: auto;
+    width: 25%;
+    pointer-events: auto;
 }
 .hiddenMessage
 {
@@ -87,6 +88,8 @@
 {
     position: relative;
     height: 75%;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 #footerChat
 {
@@ -104,11 +107,13 @@
 }
 #limiteChat
 {
+    z-index: 1000000000;
     position: fixed;
     left: 0px;
     top: 0px;
     height: 100vh;
     width: 100vw;
+    pointer-events: none;
 }
 .switch {
     position: relative;
@@ -156,7 +161,18 @@ input:checked + .slider:before {
     -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
-
+.icon-refresh-animate {
+    animation-name: rotateThis;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#actualiser
+{
+    position: relative;
+    right: 15px;
+    color: white;
+}
 /* Rounded sliders */
 .slider.round {
     border-radius: 34px;

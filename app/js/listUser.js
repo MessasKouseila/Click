@@ -1,5 +1,5 @@
 $( function() {
-    // run the currently selected effect
+    // run the  currently selected effect
     function runEffect() {
         // get effect type from
         var selectedEffect = $( "#effectTypes" ).val();
@@ -23,4 +23,4 @@ $( function() {
         $( "#animation" ).trigger("click");
         $( "#animation" ).removeClass("hide");
     });
-} );
+});

@@ -29,8 +29,8 @@ if($view===false){
 
 //inclusion du layout qui va lui meme inclure le template view
 elseif($view!=context::NONE){
-	$template_view=$nameApp."/view/".$action.$view.".php";
-	include($template_view);
+	$template_view[$action]=$nameApp."/view/".$action.$view.".php";
+	include($template_view[$action]);
 }
 
 ?>

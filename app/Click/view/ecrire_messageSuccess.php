@@ -1,4 +1,4 @@
-<div class="well">
+<div class="well" id="Sender_message">
     <form>
         <div class="input-group">
                 <span class="input-group-addon btn btn-primary" id="imageMessage">
