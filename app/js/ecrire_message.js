@@ -1,8 +1,8 @@
 $("#imageMessage").click( function () {
 
         $("#fichierMessage").trigger("click");
-    }
-);
+    });
+
 $("input[type=file]").change(function (event) {
     //alert(URL.createObjectURL(event.target.files[0]));
     $("#imageMessage").addClass("active");
@@ -13,8 +13,16 @@ $("input[type=file]").change(function (event) {
         ""+
         "");
 });
+
+
 $('#image').on('click', '#removeImage', function() {
     $("#imageMessage").removeClass("active");
     $("#fichierMessage").val("");
     $("#image").html("");
-});
+}
+);
+
+
+
+
+
