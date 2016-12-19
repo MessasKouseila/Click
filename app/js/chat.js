@@ -44,13 +44,13 @@ $(function () {
                 return false;
             }
         );
-        $("#bodyChat").scrollTop(1E10 * 50);
+        $("#chatsMessage").scrollTop(1E10 * 50);
         updateChat();
     });
     $( "#actualiser" ).on( "click", function(e) {
         $( "#actualiser" ).css( "color", "red" );
         window.setTimeout( function() {
-            $( "#actualiser" ).css( "color", "white" );
+            $( "#actualiser" ).css( "color", "#000c77" );
         }, 1000 );
     });
     $("#actualiser").click(function (e) {
@@ -81,7 +81,7 @@ $(function () {
             update();
             $("#btn-input").val("");
         }
-        $("#bodyChat").scrollTop(1E10 * 50);
+        $("#chatsMessage").scrollTop(1E10 * 50);
         return false;
     });
 });
@@ -103,7 +103,7 @@ function update() {
         complete: function (resultat, statut) {
         }
     });
-    $("#bodyChat").scrollTop(1E10 * 50);
+    $("#chatsMessage").scrollTop(1E10 * 50);
 }
 function updateChat() {
     var info = $( "ul#listechat > li:last-child" );

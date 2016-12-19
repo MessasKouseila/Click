@@ -1,71 +1,66 @@
-<div id="containerChat" class="panel panel-primary nopadding hidden-xs">
-    <!-- menu du chat-->
-    <div class="panel-heading nopadding" id="headChat">
+<div id="containerChat" class="box box-primary direct-chat direct-chat-primary nopadding">
+    <div id="headChat" class="box-header with-border">
+        <h3 id="title_chat" class="box-title">Chat</h3>
+        <span id="nbr_chat" data-toggle="tooltip"
+              title=""
+              class="badge bg-light-blue"
+              data-original-title="3 New Messages">3
+        </span>
         <span class="pull-left" id="boutondrag">
             <label class="switch">
               <input id="chatdrag" type="checkbox">
               <div class="slider round"></div>
             </label>
         </span>
-        <span class="glyphicon glyphicon-comment">Chat</span>
-        <span id="agrandire" class=" pull-right glyphicon glyphicon-minus"></span>
-        <a href="#"><span id="actualiser" class="glyphicon glyphicon-refresh pull-right"></span></a>
+        <div class="box-tools pull-right">
+            <span id="agrandire" class=" pull-right glyphicon glyphicon-minus"></span>
+            <span id="actualiser" class="glyphicon glyphicon-refresh pull-right"></span>
+        </div>
     </div>
-    <!-- messages dans le chat-->
-    <div class="panel-body nopadding" id="bodyChat">
-        <ul id="listechat" class="chat list-group">
+    <!-- /.box-header -->
+    <div id="bodyChat" class="box-body nopadding2">
+        <!-- Conversations are loaded here -->
+        <div id="chatsMessage" class="direct-chat-messages">
+            <!-- Message. Default to the left -->
             <?php foreach ($context->allChats as $chat): ?>
-                <li id="<?php echo $chat->id; ?>" class="left clearfix list-group-item nopadding">
-                    <span class="chat-img pull-left">
-                        <img
-                            src="<?php echo ($chat->emetteur->avatar === NULL) ? "image/default.jpeg" : $chat->emetteur->avatar; ?>"
-                            alt="User Avatar" class="img-circle" width="35" height="35"/>
+                <div class="direct-chat-msg">
+                    <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-name pull-left">
+                        <?php echo ($chat->emetteur != NULL) ? $chat->emetteur->nom : "nom"; ?>
+                    </span >
+                        <span id="time_chat" class="direct-chat-timestamp pull-right">
+                        <?php echo $chat->post->date->format('y/m/d H:i:s'); ?>
                     </span>
-                    <div class="chat-body clearfix nopadding">
-                        <div class="header">
-                            <strong
-                                class="primary-font"><?php echo ($chat->emetteur != NULL) ? $chat->emetteur->nom : "nom"; ?>
-                            </strong>
-                            <small class="pull-right text-muted">
-                                <span class="glyphicon glyphicon-time"></span>
-                                <?php echo $chat->post->date->format('Y-m-d H:i:s'); ?>
-                            </small>
-                        </div>
-                        <p>
-                            <?php
-                            echo htmlspecialchars($chat->post->texte);
-                            $id = $chat->id;
-                            ?>
-                        </p>
                     </div>
-                </li>
+                    <!-- /.direct-chat-info -->
+                    <img class="direct-chat-img"
+                         src="<?php echo ($chat->emetteur->avatar === NULL) ? "image/default.jpeg" : $chat->emetteur->avatar; ?>"
+                         alt="User Avatar">
+                    <div class="direct-chat-text text-justify">
+                        <?php
+                        echo htmlspecialchars($chat->post->texte);
+                        $id = $chat->id;
+                        ?>
+                    </div>
+                    <!-- /.direct-chat-text -->
+                </div>
             <?php endforeach; ?>
-        </ul>
+            <!-- /.direct-chat-msg -->
+
+            <!-- Message to the right -->
+        </div>
+        <!--/.direct-chat-messages-->
     </div>
-    <!-- footer du chat-->
-    <div class="panel-footer nopadding" id="footerChat">
-        <form class="nopadding" id="sendChat">
-            <div class="input-group">
-                <input id="btn-input" type="text" name="chat" class="form-control input-sm"
-                       placeholder="exprime toi"/>
+    <!-- /.box-body -->
+    <div id="footerChat" class="box-footer">
+        <form id="sendChat" class=" form-inline nopadding">
+            <div id="text_chat" class="input-group">
+                <input id="btn-input" type="text" name="chat" placeholder="Exprime toi ici" class="form-control">
                 <span class="input-group-btn">
-                    <button type="submit" class="btn btn-warning btn-sm" id="btn-chat">Send</button>
+                    <button id="btn-chat" type="submit" class="btn btn-primary btn-flat">Send</button>
                 </span>
             </div>
         </form>
     </div>
+    <!-- /.box-footer-->
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
