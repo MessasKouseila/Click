@@ -1,18 +1,14 @@
 <div class="row message" >
-    <div class="col-sm-3">
-        <div class="well container-fluid">
-            <a href="<?php echo "Click.php?action=index&user=".$message->emetteur->id ?>"> <img src="<?php echo ($message->emetteur->avatar === NULL)?"image/default.jpeg":$message->emetteur->avatar ;?>" class="img-circle" height="60" width="60" alt="Avatar">
-            <br>
-                <?php echo $message->emetteur->nom."<br>".$message->emetteur->prenom ?>
+    <div class="col-sm-12">
+        <div class="well">
+            
+    <div class="pull-left">
+            <a href="<?php echo "Click.php?action=index&user=".$message->emetteur->id ?>"> <img src="<?php echo ($message->emetteur->avatar === NULL)?"image/default.jpeg":$message->emetteur->avatar ;?>" class="img-circle" height="30" width="30" alt="Avatar"><?php echo $message->emetteur->nom." ".$message->emetteur->prenom ?>
             </a>
         </div>
-
-    </div>
-    <div class="col-sm-9">
-        <div class="well">
-            <?php if($message->parent !== NULL) : ?>
-            <div class="row pull-left">
-                <a href="<?php echo "Click.php?action=index&user=".$message->parent->id ?>"> <img src="<?php echo ($message->parent->avatar === NULL)?"image/default.jpeg":$message->parent->avatar ;?>" class="img-circle" height="30" width="30" alt="Avatar"> <?php echo $message->emetteur->nom." ".$message->emetteur->prenom ?></a>
+            <?php if($message->parent->id != $message->emetteur->id) : ?>
+            <div class="row pull-right">
+                <a href="<?php echo "Click.php?action=index&user=".$message->parent->id ?>"> <img src="<?php echo ($message->parent->avatar === NULL)?"image/default.jpeg":$message->parent->avatar ;?>" class="img-circle" height="30" width="30" alt="Avatar"> <?php echo $message->parent->nom." ".$message->parent->prenom ?></a>
             </div>
             <?php endif; ?>
             <div class="row">
@@ -20,7 +16,7 @@
                     <img src="<?php echo $message->post->image ?>" class="img-responsive">
                 </div>
             </div>
-            <p><?php echo $message->post->texte; ?></p>
+            <p><?php echo htmlspecialchars($message->post->texte); ?></p>
             <div class="row">
                 <button type="button" class="btn btn-primary btn-xs pull-left">
                     <span class="glyphicon glyphicon-thumbs-up"></span> Click
