@@ -25,6 +25,8 @@ $(function () {
         }
     });
     $(document).ready(function () {
+        info = $( ".direct-chat-messages#chatsMessage > .direct-chat-msg:last-child" );
+        id = info.attr("id");
         $("#containerChat").draggable("option", "disabled", true);
         $("#agrandire").click(
             function () {
@@ -59,6 +61,8 @@ $(function () {
     // fonction send avec ajax
     $("#sendChat").submit(function (e) {
         var message = $("#btn-input").val();
+        console.log(message);
+
         if(message.length != 0) {
             $.ajax({
                 url: 'ClickJS.php?action=addToChat',
@@ -86,9 +90,8 @@ $(function () {
     });
 });
 function update() {
-    var info = $( "ul#listechat > li:last-child" );
-    var id = info.attr("id");
-
+    info = $( ".direct-chat-messages#chatsMessage > .direct-chat-msg:last-child" );
+    id = info.attr("id");
     $.ajax({
         url: 'ClickJS.php?action=actuChat',
         type: 'POST',
@@ -96,19 +99,18 @@ function update() {
         dataType: 'html',
 
         success: function (code_html, statut) {
-            $("#listechat").append(code_html);
+            $("#chatsMessage").append(code_html);
         },
         error: function (resultat, statut, erreur) {
         },
         complete: function (resultat, statut) {
+            info = $( ".direct-chat-messages#chatsMessage > .direct-chat-msg:last-child" );
+            id = info.attr("id");
         }
     });
     $("#chatsMessage").scrollTop(1E10 * 50);
 }
 function updateChat() {
-    var info = $( "ul#listechat > li:last-child" );
-    var id = info.attr("id");
-
     $.ajax({
         url: 'ClickJS.php?action=actuChat',
         type: 'POST',
@@ -116,11 +118,13 @@ function updateChat() {
         dataType: 'html',
 
         success: function (code_html, statut) {
-            $("#listechat").append(code_html);
+            $("#chatsMessage").append(code_html);
         },
         error: function (resultat, statut, erreur) {
         },
         complete: function (resultat, statut) {
+            info = $( ".direct-chat-messages#chatsMessage > .direct-chat-msg:last-child" );
+            id = info.attr("id");
         }
     });
     setTimeout(updateChat, 8000);

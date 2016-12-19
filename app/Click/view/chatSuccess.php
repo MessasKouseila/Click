@@ -23,7 +23,7 @@
         <div id="chatsMessage" class="direct-chat-messages">
             <!-- Message. Default to the left -->
             <?php foreach ($context->allChats as $chat): ?>
-                <div class="direct-chat-msg">
+                <div id="<?php echo $chat->id; ?>" class="direct-chat-msg">
                     <div class="direct-chat-info clearfix">
                     <span class="direct-chat-name pull-left">
                         <?php echo ($chat->emetteur != NULL) ? $chat->emetteur->nom : "nom"; ?>
@@ -38,8 +38,8 @@
                          alt="User Avatar">
                     <div class="direct-chat-text text-justify">
                         <?php
-                        echo htmlspecialchars($chat->post->texte);
-                        $id = $chat->id;
+                            echo htmlspecialchars($chat->post->texte);
+                            $id = $chat->id;
                         ?>
                     </div>
                     <!-- /.direct-chat-text -->

@@ -20,7 +20,7 @@
                     <img src="<?php echo $message->post->image ?>" class="img-responsive">
                 </div>
             </div>
-            <p><?php echo $message->post->texte; ?></p>
+            <p><?php echo htmlspecialchars($message->post->texte); ?></p>
             <div class="row">
                 <button type="button" class="btn btn-primary btn-xs pull-left">
                     <span class="glyphicon glyphicon-thumbs-up"></span> Click

@@ -6,14 +6,14 @@
 * Time: 06:44
 */
 foreach ($context->allChats as $chat): ?>
-    <div class="direct-chat-msg">
+    <div id="<?php echo $chat->id; ?>" class="direct-chat-msg">
         <div class="direct-chat-info clearfix">
-                <span class="direct-chat-name pull-left">
-                    <?php echo ($chat->emetteur != NULL) ? $chat->emetteur->nom : "nom"; ?>
-                </span >
+            <span class="direct-chat-name pull-left">
+                <?php echo ($chat->emetteur != NULL) ? $chat->emetteur->nom : "nom"; ?>
+            </span >
             <span id="time_chat" class="direct-chat-timestamp pull-right">
-                    <?php echo $chat->post->date->format('y/m/d H:i:s'); ?>
-                </span>
+                <?php echo $chat->post->date->format('y/m/d H:i:s'); ?>
+            </span>
         </div>
         <!-- /.direct-chat-info -->
         <img class="direct-chat-img"
@@ -21,8 +21,8 @@ foreach ($context->allChats as $chat): ?>
              alt="User Avatar">
         <div class="direct-chat-text text-justify">
             <?php
-            echo htmlspecialchars($chat->post->texte);
-            $id = $chat->id;
+                echo htmlspecialchars($chat->post->texte);
+                $id = $chat->id;
             ?>
         </div>
         <!-- /.direct-chat-text -->

@@ -25,12 +25,12 @@ class mainController{
                 $user = utilisateurTable::getUserByLoginAndPass($request["login"],$request["passWord"]);
                 if (!isset($user)) {
                     $context->notify = "aucun utilisateur de ce type";
-			
+
                     return context::ERROR;
                 }
                 else {
                     context::setSessionAttribute("utilisateur",$user);
-               $context->redirect("Click.php?action=index"); 
+                    $context->redirect("Click.php?action=index");
                 }
             }
             else {
