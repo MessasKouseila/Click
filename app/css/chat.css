@@ -492,8 +492,7 @@
 {
     height: 30px !important;
 }
-#containerChat
-{
+#containerChat {
     z-index: 100000000;
     position: absolute;
     left: 10px;
@@ -503,6 +502,8 @@
     height: 55%;
     width: 24%;
     pointer-events: auto;
+    border-top: solid;
+    border-top-color: #1b6d85;
 }
 #limiteChat
 {
@@ -512,6 +513,7 @@
     top: 0px;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
     pointer-events: none;
 }
 #headChat
@@ -522,6 +524,7 @@
     top: 0%;
     left: 0px;
     right:auto;
+    background-color: #26a685;
 }
 #actualiser
 {

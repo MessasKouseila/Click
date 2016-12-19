@@ -9,11 +9,11 @@ $(function () {
         }
     ).resizable(
         {
-            containment: "parent",
+            containment: "#contenuALL",
             handles: "s, n, w, e",
-            maxHeight: 768,
+            maxHeight: 600,
             maxWidth: 960,
-            minWidth: 200,
+            minWidth: 225,
             minHeight: 265
         }
     );
