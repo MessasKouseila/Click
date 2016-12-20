@@ -47,22 +47,20 @@ $(function () {
             }
         );
         $("#chatsMessage").scrollTop(1E10 * 50);
-        updateChat();
+        setInterval(updateChat, 8000);
     });
     $( "#actualiser" ).on( "click", function(e) {
-        $( "#actualiser" ).css( "color", "#2ef31b" );
+        $( "#actualiser" ).css( "color", "#2ef31bo" );
         window.setTimeout( function() {
             $( "#actualiser" ).css( "color", "#000c77" );
         }, 1000 );
     });
     $("#actualiser").click(function (e) {
-        update();
+        updateChat();
     });
     // fonction send avec ajax
     $("#sendChat").submit(function (e) {
         var message = $("#btn-input").val();
-        console.log(message);
-
         if(message.length != 0) {
             $.ajax({
                 url: 'ClickJS.php?action=addToChat',
@@ -82,34 +80,13 @@ $(function () {
                 complete: function (resultat, statut) {
                 }
             });
-            update();
+            updateChat();
             $("#btn-input").val("");
         }
         $("#chatsMessage").scrollTop(1E10 * 50);
         return false;
     });
 });
-function update() {
-    info = $( ".direct-chat-messages#chatsMessage > .direct-chat-msg:last-child" );
-    id = info.attr("id");
-    $.ajax({
-        url: 'ClickJS.php?action=actuChat',
-        type: 'POST',
-        data: 'id='+ id,
-        dataType: 'html',
-
-        success: function (code_html, statut) {
-            $("#chatsMessage").append(code_html);
-        },
-        error: function (resultat, statut, erreur) {
-        },
-        complete: function (resultat, statut) {
-            info = $( ".direct-chat-messages#chatsMessage > .direct-chat-msg:last-child" );
-            id = info.attr("id");
-        }
-    });
-    $("#chatsMessage").scrollTop(1E10 * 50);
-}
 function updateChat() {
     $.ajax({
         url: 'ClickJS.php?action=actuChat',
@@ -127,5 +104,4 @@ function updateChat() {
             id = info.attr("id");
         }
     });
-    setTimeout(updateChat, 8000);
 }
