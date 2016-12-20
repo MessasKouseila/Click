@@ -1,7 +1,7 @@
 <div class="row message" >
     <div class="col-sm-12">
         <div class="well">
-            
+
     <div class="pull-left">
             <a href="<?php echo "Click.php?action=index&user=".$message->emetteur->id ?>"> <img src="<?php echo ($message->emetteur->avatar === NULL)?"image/default.jpeg":$message->emetteur->avatar ;?>" class="img-circle" height="30" width="30" alt="Avatar"><?php echo $message->emetteur->nom." ".$message->emetteur->prenom ?>
             </a>

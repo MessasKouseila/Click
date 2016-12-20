@@ -52,7 +52,11 @@ class message{
   */
 
 public $post;
-	
+
+	public function __construct()
+	{
+	}
+
 }
 
 ?>

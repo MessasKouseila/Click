@@ -30,6 +30,26 @@ class messageTable {
 		}
 		return $messages; 
 	}
+
+	public static function addMessage($emetteur,$destinataire,$text,$avatar)
+	{
+		$message = new message();
+		$message->emetteur = $emetteur;
+		$message->destinataire = $destinataire;
+		$message->parent = $emetteur;
+		$message->aime = 0;
+		$post = new Post();
+		$post->texte = $text;
+		$post->date = new DateTime();
+		$message->post = $post;
+		if($avatar != "")
+			$post->image = "https://pedago02a.univ-avignon.fr/~uapv1601678/Click/app/image/images/".$avatar;
+		$em = dbconnection::getInstance()->getEntityManager();
+		$em->persist($message);
+		$em->flush();
+
+
+	}
 }
 
 ?>

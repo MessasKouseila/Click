@@ -161,5 +161,56 @@ class mainController{
 
         return context::SUCCESS;
     }
+    public static function envoyerMessage($request,$context){
+        $emetteur = context::getSessionAttribute("utilisateur");
+        ///Redirection Si l'utilisateur n'est pas connecte
+        if($emetteur === NULL) {
+            $context->redirect("Click.php?action=login");
+        }
+        $emetteur = utilisateurTable::getUserById($emetteur->id);
+        $destinataire = null;
+        if(isset($request['id']))
+            $destinataire = utilisateurTable::getUserById($request['id']);
+        if(isset($emetteur) && isset($destinataire) && isset($request['message']) && isset($_FILES["image"])) {
+            $avatar = null;
 
+            if ($_FILES["image"]["size"] == 0) {
+                $avatar = 0;
+                if($request['message'] != "") {
+                   messageTable::addMessage($emetteur, $destinataire, $request['message'],"");
+                    $context->info = $emetteur->id. " ". $destinataire->id." ".$request['message'];
+                }
+            } else {
+                $target_dir = "image/images/";
+                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                $check = @getimagesize($_FILES["image"]["tmp_name"]);
+                if ($check !== false) {
+
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                         messageTable::addMessage($emetteur,$destinataire,$request['message'],basename($_FILES["image"]["name"]));
+
+                        $avatar = 1;
+
+                    } else {
+                        $context->info = "Erreur lors de l'enregistrement du fichier";
+                    }
+
+                } else {
+                    $context->info = "Votre fichier n'est pas une image";
+
+                }
+
+            }
+           if (isset($avatar))
+                $context->info = "Message Envoyé";
+            else {
+                $context->info = "Erreur envoie";
+            }
+        }
+        else
+        {
+            $context->info = "Erreur";
+        }
+        return context::SUCCESS;
+    }
 }
