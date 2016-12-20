@@ -455,34 +455,6 @@
 .direct-chat-success .right>.direct-chat-text:after, .direct-chat-success .right>.direct-chat-text:before {
     border-left-color: #00a65a;
 }
-/*
- *  STYLE 7
- */
-
-#style-7::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-    border-radius: 10px;
-}
-
-#style-7::-webkit-scrollbar
-{
-    width: 10px;
-    background-color: #F5F5F5;
-}
-
-#style-7::-webkit-scrollbar-thumb
-{
-    border-radius: 10px;
-    background-image: -webkit-gradient(linear,
-    left bottom,
-    left top,
-    color-stop(0.44, rgb(122,153,217)),
-    color-stop(0.72, rgb(73,125,189)),
-    color-stop(0.86, rgb(28,58,148)));
-}
-
 .hiddenMessage
 {
     max-height: 30px;
@@ -503,7 +475,7 @@
     width: 24%;
     pointer-events: auto;
     border-top: solid;
-    border-top-color: #1b6d85;
+    border-top-color: #2ef31b;
 }
 #limiteChat
 {
@@ -524,13 +496,18 @@
     top: 0%;
     left: 0px;
     right:auto;
-    background-color: #26a685;
+    background-color: #1b6d85;
+    color: #080808;
 }
 #actualiser
 {
     position: relative;
-    right: 15px;
-    color: #000c77;
+    right: 5px;
+    color: #000000;
+}
+#option_chat
+{
+    top: 8px;
 }
 #boutondrag
 {
@@ -560,7 +537,7 @@
 {
     position: absolute;
     right: 30%;
-    top: 20%;
+    top: 15%;
     bottom: 20%;
     width: 20px;
     height: 20px;
@@ -572,7 +549,6 @@
     width: 100%;
     top: 10%;
     overflow: hidden;
-    background-color: #1b6d85;
 }
 #chatsMessage
 {
@@ -580,10 +556,10 @@
     height: 100%;
     width: 100%;
     top: 0%;
+    background-color: #34a67f;
     overflow-x: hidden;
     overflow-y: scroll;
 }
-
 #footerChat
 {
     position: absolute;
@@ -592,7 +568,11 @@
     left: 0%;
     right: 0%;
     bottom: 0%;
-    background-color: #26a685;
+    background-color: #1b6d85;
+}
+#time_chat
+{
+    color: #080808;
 }
 #sendChat
 {

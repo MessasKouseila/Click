@@ -12,7 +12,7 @@
               <div class="slider round"></div>
             </label>
         </span>
-        <div class="box-tools pull-right">
+        <div class="box-tools pull-right" id="option_chat">
             <span id="agrandire" class=" pull-right glyphicon glyphicon-minus"></span>
             <span id="actualiser" class="glyphicon glyphicon-refresh pull-right"></span>
         </div>

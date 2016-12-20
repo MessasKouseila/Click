@@ -50,7 +50,7 @@ $(function () {
         updateChat();
     });
     $( "#actualiser" ).on( "click", function(e) {
-        $( "#actualiser" ).css( "color", "red" );
+        $( "#actualiser" ).css( "color", "#2ef31b" );
         window.setTimeout( function() {
             $( "#actualiser" ).css( "color", "#000c77" );
         }, 1000 );
