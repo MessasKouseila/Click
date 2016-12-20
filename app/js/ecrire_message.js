@@ -23,6 +23,50 @@ $('#image').on('click', '#removeImage', function() {
 );
 
 
+$("#envoyerMessage").click(function(e)
+{
+    e.preventDefault();
+    var val = (window.FormData) ? new FormData($("#formEnvoiMessage")[0]) : $("#formEnvoiMessage").serialize();
+    alert(val);
+    $.ajax({
+
+        url : 'ClickJS.php?action=envoyerMessage',
+
+        type : 'Post',
+        contentType: false,
+        processData: false,
+        data : val,
+        dataType : 'html',
+
+        success : function(code_html, statut){
+           if(code_html == "Message Envoyé")
+           {
+               $("#alertEnvoiMessage").attr("class","alert-success center");
+               $("#alertEnvoiMessage").html(code_html);
+           }
+           else {
+               $("#alertEnvoiMessage").attr("class","alert-danger center");
+               $("#alertEnvoiMessage").html(code_html);
+           }
+
+        },
+
+
+        error : function(resultat, statut, erreur){
+
+
+
+        },
+
+
+        complete : function(resultat, statut){
+
+
+        }
+
+
+    });
+});
 
 
 
