@@ -1,4 +1,6 @@
+<!-- container general du chat-->
 <div id="containerChat" class="box box-primary direct-chat direct-chat-primary nopadding">
+    <!-- menu du chat-->
     <div id="headChat" class="box-header with-border">
         <h3 id="title_chat" class="box-title">Chat</h3>
         <span id="nbr_chat" data-toggle="tooltip"
@@ -17,22 +19,19 @@
             <span id="actualiser" class="glyphicon glyphicon-refresh pull-right"></span>
         </div>
     </div>
-    <!-- /.box-header -->
+    <!-- body du chat avec les messages chat afficher-->
     <div id="bodyChat" class="box-body nopadding2">
-        <!-- Conversations are loaded here -->
         <div id="chatsMessage" class="direct-chat-messages">
-            <!-- Message. Default to the left -->
             <?php foreach ($context->allChats as $chat): ?>
                 <div id="<?php echo $chat->id; ?>" class="direct-chat-msg">
                     <div class="direct-chat-info clearfix">
-                    <span class="direct-chat-name pull-left">
-                        <?php echo ($chat->emetteur != NULL) ? $chat->emetteur->nom : "nom"; ?>
-                    </span >
+                        <span class="direct-chat-name pull-left">
+                            <?php echo ($chat->emetteur != NULL) ? $chat->emetteur->nom : "nom"; ?>
+                        </span >
                         <span id="time_chat" class="direct-chat-timestamp pull-right">
-                        <?php echo $chat->post->date->format('y/m/d H:i:s'); ?>
-                    </span>
+                            <?php echo $chat->post->date->format('y/m/d H:i:s'); ?>
+                        </span>
                     </div>
-                    <!-- /.direct-chat-info -->
                     <img class="direct-chat-img"
                          src="<?php echo ($chat->emetteur->avatar === NULL) ? "image/default.jpeg" : $chat->emetteur->avatar; ?>"
                          alt="User Avatar">
@@ -42,16 +41,11 @@
                             $id = $chat->id;
                         ?>
                     </div>
-                    <!-- /.direct-chat-text -->
                 </div>
             <?php endforeach; ?>
-            <!-- /.direct-chat-msg -->
-
-            <!-- Message to the right -->
         </div>
-        <!--/.direct-chat-messages-->
     </div>
-    <!-- /.box-body -->
+    <!-- footer du chat avec formulaire d'envoie-->
     <div id="footerChat" class="box-footer">
         <form id="sendChat" class=" form-inline nopadding">
             <div id="text_chat" class="input-group">
@@ -62,5 +56,4 @@
             </div>
         </form>
     </div>
-    <!-- /.box-footer-->
 </div>

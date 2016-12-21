@@ -68,13 +68,15 @@ $(function () {
                 data: 'chat='+message,
                 dataType: 'html',
                 success: function (code_html, statut) {
+                    $( "#headChat" ).css( "color", "#16A600" );
                     window.setTimeout( function() {
-                        alert("message envoyer");
+                        $( "#headChat" ).css( "color", "#1b6d85" );
                     }, 1000 );
                 },
                 error: function (resultat, statut, erreur) {
+                    $( "#headChat" ).css( "color", "#851C00" );
                     window.setTimeout( function() {
-                        alert("message erreur");
+                        $( "#headChat" ).css( "color", "#1b6d85" );
                     }, 1000 );
                 },
                 complete: function (resultat, statut) {
