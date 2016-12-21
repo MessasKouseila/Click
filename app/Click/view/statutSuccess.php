@@ -1,5 +1,5 @@
 <div class="well text-left" id="statutModif">
-        <p id="textStatus">Status: <?php $context->user->statut ?></p>
+        <p id="textStatus">Status: <?php echo $context->user->statut; ?></p>
             <?php if($context->isuser) : ?>
             <button type="button" class="btn btn-default btn-sm" id="modifier">Modifier</button>
         <?php endif; ?>

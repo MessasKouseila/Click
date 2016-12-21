@@ -68,7 +68,7 @@
                     <?php include($template_view["ecrire_message"]); ?>
                 </div>
                 <div id="mur">
-                    <button type="button" style="position: fixed !important;z-index:3 !important;margin-left: 0% !important;margin-top: 0% !important;" class="btn btn-info btn-sm hide" id="nouveauxMessages">Nouveaux Messages</button>
+                    <button type="button" style="position: fixed !important;z-index:3 !important;top: 10px !important;left: 50% !important;" class="btn btn-info btn-sm hide " id="nouveauxMessages">Nouveaux Messages</button>
                     <?php include($template_view["mur"]); ?>
 
                 </div>
