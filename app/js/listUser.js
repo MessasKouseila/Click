@@ -29,7 +29,9 @@ $(function () {
             container: "body",
             html: true,
             title: "Message",
-            content: '<div id="popoverForm" class="form-group"> <label for="message">Message :</label> <textarea class="form-control" rows="3" id="Message"></textarea> </div>',
+            content: function () {
+                return $('#formEnvoiMessage').html();
+            },
             placement: "left"
         }
     ).on("mouseenter", function () {
@@ -44,6 +46,6 @@ $(function () {
             if (!$(".popover:hover").length) {
                 $(_this).popover("hide");
             }
-        }, 300);
+        }, 100);
     });
 });
