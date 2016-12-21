@@ -27,7 +27,6 @@ $("#envoyerMessage").click(function(e)
 {
     e.preventDefault();
     var val = (window.FormData) ? new FormData($("#formEnvoiMessage")[0]) : $("#formEnvoiMessage").serialize();
-    alert(val);
     $.ajax({
 
         url : 'ClickJS.php?action=envoyerMessage',

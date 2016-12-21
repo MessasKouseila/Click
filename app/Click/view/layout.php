@@ -68,7 +68,9 @@
                     <?php include($template_view["ecrire_message"]); ?>
                 </div>
                 <div id="mur">
+                    <button type="button" style="position: fixed !important;z-index:3 !important;margin-left: 0% !important;margin-top: 0% !important;" class="btn btn-info btn-sm hide" id="nouveauxMessages">Nouveaux Messages</button>
                     <?php include($template_view["mur"]); ?>
+
                 </div>
         </div>
         <div class="col-sm-3" id="listeUser">
@@ -85,6 +87,7 @@
 <script src="js/bootstrap-toggle.min.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/logo.js"></script>
+<script src="js/message.js"></script>
 <script src="js/listUser.js"></script>
 
 </body>

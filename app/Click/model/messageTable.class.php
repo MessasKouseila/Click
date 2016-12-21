@@ -23,14 +23,29 @@ class messageTable {
 		$em = dbconnection::getInstance()->getEntityManager();
 
 		$userRepository = $em->getRepository('message');
-		$messages = $userRepository->findAll();	
+		$messages = $userRepository->findBy(
+			array(),
+			array('id' => 'desc')
+
+		);
 	
 		if ($messages == false){
-			echo 'Erreur sql';
+			return null;
 		}
 		return $messages; 
 	}
-
+	public static function getMessagesAfterId($id) {
+		$em = dbconnection::getInstance()->getEntityManager();
+		$qb = $em->createQueryBuilder();
+		$qb->select('m')
+			->from('message', 'm')
+			->where('m.id > :id')
+			->orderBy('m.id', 'DESC')
+			->setParameter('id', $id);
+		return $qb
+			->getQuery()
+			->getResult();
+	}
 	public static function addMessage($emetteur,$destinataire,$text,$avatar)
 	{
 		$message = new message();
@@ -50,6 +65,53 @@ class messageTable {
 
 
 	}
+
+	public static function getMessageById($id){
+		$em = dbconnection::getInstance()->getEntityManager();
+
+		$messageRepository = $em->getRepository('message');
+		$message = $messageRepository->findOneBy(array('id' => $id));
+
+		if ($message == false){
+			return null;
+		}
+		return $message;
+	}
+	public static function aimer($id)
+	{
+		$message = self::getMessageById($id);
+		if($message == null)
+			return false;
+		else{
+			$message->aime = $message->aime + 1;
+			$em = dbconnection::getInstance()->getEntityManager();
+			$em->persist($message);
+			$em->flush();
+			return true;
+		}
+
+	}
+	public static function partager($idmessage,$iduser)
+	{
+		$message = self::getMessageById($idmessage);
+		$user = utilisateurTable::getUserById($iduser);
+		$partagerMessage = new message();
+		if($message == null && $user == null)
+			return false;
+		else{
+			$partagerMessage->aime = 0;
+			$partagerMessage->destinataire = $user;
+			$partagerMessage->emetteur = $user;
+			$partagerMessage->parent = $message->parent;
+			$partagerMessage->post = $message->post;
+			$em = dbconnection::getInstance()->getEntityManager();
+			$em->persist($partagerMessage);
+			$em->flush();
+			return true;
+		}
+
+	}
+
 }
 
 ?>

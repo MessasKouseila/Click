@@ -103,7 +103,10 @@ class mainController{
         }
     }
     public static function mur($request,$context){
+        if(!isset($request['id']) )
         $context->messages = messageTable::getMessages();
+        else
+           $context->messages = messageTable::getMessagesAfterId(strval($request['id']));
         return context::SUCCESS;
     }
     public static function statut($request,$context){
@@ -175,10 +178,11 @@ class mainController{
             $avatar = null;
 
             if ($_FILES["image"]["size"] == 0) {
-                $avatar = 0;
+
                 if($request['message'] != "") {
                    messageTable::addMessage($emetteur, $destinataire, $request['message'],"");
                     $context->info = $emetteur->id. " ". $destinataire->id." ".$request['message'];
+                    $avatar = 0;
                 }
             } else {
                 $target_dir = "image/images/";
@@ -211,6 +215,32 @@ class mainController{
         {
             $context->info = "Erreur";
         }
+        return context::SUCCESS;
+    }
+
+    public static function aimerMessage($request,$context){
+
+        ///Redirection Si l'utilisateur n'est pas connecte
+        if($context::getSessionAttribute("utilisateur") === NULL) {
+            $context->redirect("Click.php?action=login");
+        }
+        if(isset($request['id']))
+            messageTable::aimer(strval($request['id']));
+
+        return context::SUCCESS;
+    }
+
+
+
+    public static function partagerMessage($request,$context){
+        $user = $context::getSessionAttribute("utilisateur");
+        ///Redirection Si l'utilisateur n'est pas connecte
+        if($user === NULL) {
+            $context->redirect("Click.php?action=login");
+        }
+        if(isset($request['id']))
+            messageTable::partager(strval($request['id']),$user->id);
+
         return context::SUCCESS;
     }
 }
