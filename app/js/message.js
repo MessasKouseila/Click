@@ -3,17 +3,17 @@
  */
 
 function updateMessage() {
-   // alert($("#mur div").first().attr("id"));
     $.ajax({
         url: 'ClickJS.php?action=mur',
         type: 'POST',
-        data: 'id=' + $("#mur div").first().attr("id") ,
+        data: ($("#mur div").first().attr("id") != undefined)?'id=' + $("#mur div").first().attr("id")+"&user="+$("body").attr("id"): "user="+$("body").attr("id"),
         dataType: 'html',
 
         success: function (code_html, statut) {
-           if(code_html != "")
-            $("#nouveauxMessages").removeClass("hide");
-            $("#mur div").first().before(code_html);
+           if(code_html != "") {
+               $("#nouveauxMessages").removeClass("hide");
+               $("#mur div").first().before(code_html);
+           }
         },
         error: function (resultat, statut, erreur) {
         },

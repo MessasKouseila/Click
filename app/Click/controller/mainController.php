@@ -103,10 +103,11 @@ class mainController{
         }
     }
     public static function mur($request,$context){
+        $user = (isset($request["user"])) ?strval($request["user"]): context::getSessionAttribute("utilisateur")->id;
         if(!isset($request['id']) )
-        $context->messages = messageTable::getMessages();
+        $context->messages = messageTable::getUserMessageById($user);
         else
-           $context->messages = messageTable::getMessagesAfterId(strval($request['id']));
+           $context->messages = messageTable::getMessagesAfterId(strval($request['id']),$user);
         return context::SUCCESS;
     }
     public static function statut($request,$context){

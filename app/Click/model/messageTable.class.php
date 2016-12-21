@@ -34,14 +34,16 @@ class messageTable {
 		}
 		return $messages; 
 	}
-	public static function getMessagesAfterId($id) {
+	public static function getMessagesAfterId($id,$iduser) {
 		$em = dbconnection::getInstance()->getEntityManager();
 		$qb = $em->createQueryBuilder();
 		$qb->select('m')
 			->from('message', 'm')
 			->where('m.id > :id')
+			->andWhere('m.destinataire = :destinataire')
 			->orderBy('m.id', 'DESC')
-			->setParameter('id', $id);
+			->setParameter('id', $id)
+			->setParameter('destinataire', $iduser);
 		return $qb
 			->getQuery()
 			->getResult();

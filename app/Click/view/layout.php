@@ -16,7 +16,7 @@
     <script src="js/jquery.js"></script>
 </head>
 
-<body style="height:100% !important;">
+<body style="height:100% !important;" id="<?php echo $context->user->id; ?>">
 <nav class="navbar navbar-default" id="menu">
     <div class="container-fluid">
         <div class="navbar-header">

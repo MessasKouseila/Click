@@ -33,6 +33,7 @@ class utilisateur{
 	public $date_de_naissance;
 	/**
 	*@OneToMany(targetEntity="message", mappedBy="destinataire")
+	 * @OrderBy({"id" = "DESC"})
 	*/
 	public $messages;
 
