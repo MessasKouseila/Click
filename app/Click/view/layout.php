@@ -81,14 +81,14 @@
 
     </footer>
 </div>
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/bootstrap-toggle.min.js"></script>
-<script src="js/chat.js"></script>
-<script src="js/logo.js"></script>
-<script src="js/message.js"></script>
-<script src="js/listUser.js"></script>
-
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/bootstrap-toggle.min.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/logo.js"></script>
+    <script src="js/message.js"></script>
+    <script src="js/listUser.js"></script>
+    <script src="js/ecrire_message"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@ class mainController{
                     return context::ERROR;
                 }
                 else {
-                    context::setSessionAttribute("utilisateur",$user->id);
+                    context::setSessionAttribute("utilisateur",$user);
                     $context->redirect("Click.php?action=index");
                 }
             }
@@ -48,7 +48,7 @@ class mainController{
         $user = context::getSessionAttribute("utilisateur");
         if (isset($user)) {
             //id = $user->id;
-            $messages = messageTable::getUserMessageById($user);
+            $messages = messageTable::getUserMessageById(35);
             $context->messages = $messages;
             return context::SUCCESS;
         }
@@ -69,12 +69,12 @@ class mainController{
         // On verifie est ce qu'on veut consulter un profil
         if(empty($request["user"])) {
             $context->isuser = true;
-            $context->user = utilisateurTable::getUserById(context::getSessionAttribute("utilisateur"));
+            $context->user = context::getSessionAttribute("utilisateur");
         }
         // SInon
         else {
             $context->usercur = context::getSessionAttribute("utilisateur");
-            $context->isuser = ($context->usercur == $request["user"]);
+            $context->isuser = ($context->usercur->id == $request["user"]);
             $context->user =  utilisateurTable::getUserById($request["user"]);
         }
         return context::SUCCESS;
@@ -93,7 +93,7 @@ class mainController{
     }
     public static function addToChat($request,$context){
         $user = context::getSessionAttribute("utilisateur");
-        $userParam = utilisateurTable::getUserById($user);
+        $userParam = utilisateurTable::getUserById($user->id);
         $text = $_POST["chat"];
         if ($userParam != NULL && strlen($text) != 0) {
             chatTable::addChat($text, $userParam);
@@ -118,12 +118,12 @@ class mainController{
         // On verifie est ce qu'on veut consulter un profil
         if(empty($request["user"])) {
             $context->isuser = true;
-            $context->user = utilisateurTable::getUserById(context::getSessionAttribute("utilisateur"));
+            $context->user = context::getSessionAttribute("utilisateur");
         }
         // SInon
         else {
             $context->usercur = context::getSessionAttribute("utilisateur");
-            $context->isuser = ($context->usercur == $request["user"]);
+            $context->isuser = ($context->usercur->id == $request["user"]);
             $context->user =  utilisateurTable::getUserById($request["user"]);
         }
 
@@ -145,13 +145,13 @@ class mainController{
         // On verifie est ce qu'on veut consulter un profil
        if(empty($request["user"])) {
            $context->isuser = true;
-           $context->user = utilisateurTable::getUserById(context::getSessionAttribute("utilisateur"));
+           $context->user = context::getSessionAttribute("utilisateur");
        }
         // SInon
        else {
            $context->usercur = context::getSessionAttribute("utilisateur");
            $context->user =  utilisateurTable::getUserById($request["user"]);
-           $context->isuser = ($context->usercur == $context->user->id);
+           $context->isuser = ($context->usercur->id == $context->user->id);
 
        }
 
@@ -170,7 +170,7 @@ class mainController{
         if($emetteur === NULL) {
             $context->redirect("Click.php?action=login");
         }
-        $emetteur = utilisateurTable::getUserById($emetteur);
+        $emetteur = utilisateurTable::getUserById($emetteur->id);
         $destinataire = null;
         if(isset($request['id']))
             $destinataire = utilisateurTable::getUserById($request['id']);
