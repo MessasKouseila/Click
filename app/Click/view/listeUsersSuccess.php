@@ -15,6 +15,7 @@
                 <a href="<?php echo "Click.php?action=index&user=" . $user->id ?>" data-toggle="tooltip"
                    title="<?php echo $user->statut; ?>">
                     <li class="list-group-item nopadding" id="userItem">
+                        <div id="<?php echo $user->id; ?>" class="hidden"></div>
                         <img src="<?php echo ($user->avatar === NULL) ? 'image/default.jpeg' : $user->avatar; ?>"
                              class="img-circle" height="35" width="35" alt="Avatar">
                         <br><?php echo "" . $user->nom . "<br>" . $user->prenom; ?>
