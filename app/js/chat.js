@@ -57,6 +57,10 @@ $(function () {
     });
     $("#actualiser").click(function (e) {
         updateChat();
+        var charger = $("#newMessages").html();
+        $("#chatsMessage").append(charger);
+        $("#newMessages").html(null);
+        updateChat();
     });
     // fonction send avec ajax
     $("#sendChat").submit(function (e) {
@@ -97,7 +101,17 @@ function updateChat() {
         dataType: 'html',
 
         success: function (code_html, statut) {
-            $("#chatsMessage").append(code_html);
+            $("#newMessages").html(code_html);
+            var lastmessge = $(".hidden#newMessages > .direct-chat-msg:last-child");
+            id2 = lastmessge.attr("id");
+            if(id2 == null) {
+                diff1 = parseInt(id);
+                diff2 = parseInt(id);
+            } else {
+                diff1 = parseInt(id2);
+                diff2 = parseInt(id);
+            }
+            $("#nbr_chat").text(diff1 - diff2);
         },
         error: function (resultat, statut, erreur) {
         },

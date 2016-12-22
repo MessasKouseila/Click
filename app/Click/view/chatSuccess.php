@@ -3,11 +3,7 @@
     <!-- menu du chat-->
     <div id="headChat" class="box-header with-border">
         <h3 id="title_chat" class="box-title">Chat</h3>
-        <span id="nbr_chat" data-toggle="tooltip"
-              title=""
-              class="badge bg-light-blue"
-              data-original-title="3 New Messages">3
-        </span>
+        <span id="nbr_chat" data-toggle="tooltip" title="" class="badge bg-light-blue"> 0 </span>
         <span class="pull-left" id="boutondrag">
             <label class="switch">
               <input id="chatdrag" type="checkbox">
@@ -19,6 +15,7 @@
             <span id="actualiser" class="glyphicon glyphicon-refresh pull-right"></span>
         </div>
     </div>
+    <div id="newMessages" class="hidden"></div>
     <!-- body du chat avec les messages chat afficher-->
     <div id="bodyChat" class="box-body nopadding2">
         <div id="chatsMessage" class="direct-chat-messages">
