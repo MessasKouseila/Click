@@ -49,18 +49,16 @@ $(function () {
         $("#chatsMessage").scrollTop(1E10 * 50);
         setInterval(updateChat, 8000);
     });
-    $( "#actualiser" ).on( "click", function(e) {
+    $("#actualiser").click(function (e) {
         $( "#actualiser" ).css( "color", "#2ef31bo" );
         window.setTimeout( function() {
-            $( "#actualiser" ).css( "color", "#000c77" );
+            $( "#actualiser" ).css( "color", "#000000" );
         }, 1000 );
-    });
-    $("#actualiser").click(function (e) {
-        updateChat();
         var charger = $("#newMessages").html();
         $("#chatsMessage").append(charger);
         $("#newMessages").html(null);
-        updateChat();
+        $("#nbr_chat").removeClass("flash");
+
     });
     // envoie le message sur la bdd via ajax
     $("#sendChat").submit(function (e) {
@@ -114,7 +112,16 @@ function updateChat() {
                 diff1 = parseInt(id2);
                 diff2 = parseInt(id);
             }
-            $("#nbr_chat").text(diff1 - diff2);
+
+            if(id2 != null) {
+                if ((diff1 - diff2) != 0) {
+                    $("#nbr_chat").text(diff1 - diff2);
+                    $("#nbr_chat").effect("bounce", "slow");
+                    $("#nbr_chat").addClass("flash");
+                } else {
+                    $("#nbr_chat").text(diff1 - diff2);
+                }
+            }
         },
         error: function (resultat, statut, erreur) {
         },
