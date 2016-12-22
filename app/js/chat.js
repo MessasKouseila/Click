@@ -68,15 +68,15 @@ $(function () {
                 data: 'chat='+message,
                 dataType: 'html',
                 success: function (code_html, statut) {
-                    $( "#headChat" ).css( "color", "#16A600" );
+                    $( "#headChat" ).css( "background-color", "#16A600" );
                     window.setTimeout( function() {
-                        $( "#headChat" ).css( "color", "#1b6d85" );
+                        $( "#headChat" ).css( "background-color", "#1b6d85" );
                     }, 1000 );
                 },
                 error: function (resultat, statut, erreur) {
-                    $( "#headChat" ).css( "color", "#851C00" );
+                    $( "#headChat" ).css( "background-color", "#851C00" );
                     window.setTimeout( function() {
-                        $( "#headChat" ).css( "color", "#1b6d85" );
+                        $( "#headChat" ).css( "background-color", "#1b6d85" );
                     }, 1000 );
                 },
                 complete: function (resultat, statut) {
