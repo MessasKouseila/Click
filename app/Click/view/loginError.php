@@ -1,20 +1,57 @@
-<div class="row text-center nopadding">
-    <div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4">
-        <h1 class="text-center login-title">Veuillez vous authentifier</h1>
-        <div class="account-wall">
-            <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
-                 alt="">
-            <form class="form-signin" method="post" action="">
-                <input type="text" name="login" class="form-control" placeholder="Login" required autofocus>
-                <input type="password" name="passWord" class="form-control" placeholder="Password" required>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">
-                    Connexion</button>
-                <label class="checkbox pull-left">
-                    <input type="checkbox" value="remember-me">
-                    se souvenir de moi
-                </label>
-            </form>
-        </div>
-        <a href="#" class="text-center new-account"> Inscription </a>
+<div class="container" style="margin-top:40px">
+<div class="row">
+<div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong> Connexion</strong>
     </div>
+    <div class="panel-body">
+    <form role="form" action="" method="POST">
+    <fieldset>
+        <div class="row">
+            <div class="center-block">
+                <img class="profile-img"
+                     src="image/profile_login.png"
+                     alt="avatar_login">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-10  col-md-offset-1 ">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" placeholder="Username" name="login" type="text"
+                               autofocus>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </span>
+                        <input class="form-control" placeholder="Password" name="passWord"
+                               type="password" value="">
+                    </div>
+                </div>
+                <div class="form-group" id="boutton_connexion">
+                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign in">
+                </div>
+                <label class="checkbox pull-left" id="session_persiste">
+                    <input type="checkbox" value="persistance">
+                    <p> Garder la session </p>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    </form>
+    </div>
+    <div class="panel-footer ">
+        Pas enregisterer ?
+        <a href="https://pedago.univ-avignon.fr/~fredouil/register.php" onClick=""> Inscrit toi ici </a>
+    </div>
+</div>
+</div>
+</div>
 </div>
