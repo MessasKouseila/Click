@@ -25,6 +25,7 @@ $(function () {
         }
     });
     $(document).ready(function () {
+        $("#newMessages").html("");
         info = $( ".direct-chat-messages#chatsMessage > .direct-chat-msg:last-child" );
         id = info.attr("id");
         $("#containerChat").draggable("option", "disabled", true);
@@ -49,14 +50,18 @@ $(function () {
         $("#chatsMessage").scrollTop(1E10 * 50);
         setInterval(updateChat, 8000);
     });
-    $("#actualiser").click(function (e) {
+    $( "#actualiser" ).on( "click", function(e) {
         $( "#actualiser" ).css( "color", "#2ef31bo" );
         window.setTimeout( function() {
             $( "#actualiser" ).css( "color", "#000000" );
         }, 1000 );
+    });
+    $("#actualiser").click(function (e) {
+        updateChat();
         var charger = $("#newMessages").html();
         $("#chatsMessage").append(charger);
-        $("#newMessages").html(null);
+        $("#newMessages").html("");
+        updateChat();
         $("#nbr_chat").removeClass("flash");
 
     });
@@ -112,14 +117,11 @@ function updateChat() {
                 diff1 = parseInt(id2);
                 diff2 = parseInt(id);
             }
-
+            $("#nbr_chat").text(diff1 - diff2);
             if(id2 != null) {
                 if ((diff1 - diff2) != 0) {
-                    $("#nbr_chat").text(diff1 - diff2);
                     $("#nbr_chat").effect("bounce", "slow");
                     $("#nbr_chat").addClass("flash");
-                } else {
-                    $("#nbr_chat").text(diff1 - diff2);
                 }
             }
         },
