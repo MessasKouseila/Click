@@ -62,7 +62,7 @@ $(function () {
                 setTimeout(function () {
                     $(_this).popover('hide');
                     inf2 = -1;
-                }, 1800);
+                }, 1500);
 
             });
             $("#imageMessage2").on("click", function () {
@@ -117,7 +117,7 @@ $(function () {
                     }
                 });
             });
-        }, 3000);
+        }, 2000);
     }).on("mouseleave", function () {
         clearTimeout(timeID);
         var _this = this;
