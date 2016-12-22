@@ -62,7 +62,7 @@ $(function () {
         $("#newMessages").html(null);
         updateChat();
     });
-    // fonction send avec ajax
+    // envoie le message sur la bdd via ajax
     $("#sendChat").submit(function (e) {
         var message = $("#btn-input").val();
         if(message.length != 0) {
@@ -93,6 +93,8 @@ $(function () {
         return false;
     });
 });
+// fonction ajax qui recupere tous les messages qui n'ont pas été afficher encore sur le chat
+// elle recupere l'id du dernier chat afficher, puis effectue une requete avec cette id
 function updateChat() {
     $.ajax({
         url: 'ClickJS.php?action=actuChat',
@@ -101,6 +103,7 @@ function updateChat() {
         dataType: 'html',
 
         success: function (code_html, statut) {
+            // je recupere les nouveau message puis je calcule le nombre de nouveau message
             $("#newMessages").html(code_html);
             var lastmessge = $(".hidden#newMessages > .direct-chat-msg:last-child");
             id2 = lastmessge.attr("id");
@@ -116,6 +119,7 @@ function updateChat() {
         error: function (resultat, statut, erreur) {
         },
         complete: function (resultat, statut) {
+            // j'actualise ma derniere id
             info = $( ".direct-chat-messages#chatsMessage > .direct-chat-msg:last-child" );
             id = info.attr("id");
         }
