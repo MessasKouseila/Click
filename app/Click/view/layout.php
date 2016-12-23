@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/listUser.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <script src="js/jquery.js"></script>
 </head>
 
 <body style="height:100% !important;" id="<?php echo $context->user->id; ?>">
@@ -61,34 +60,36 @@
             </div>
         </div>
         <div class="col-sm-6">
-                <div id="statut">
-                    <?php include($template_view["statut"]); ?>
-                </div>
-                <div id="send_Message">
-                    <?php include($template_view["ecrire_message"]); ?>
-                </div>
-                <div id="mur">
-                    <button type="button" style="position: fixed !important;z-index:3 !important;top: 10px !important;left: 50% !important;" class="btn btn-info btn-sm hide " id="nouveauxMessages">Nouveaux Messages</button>
-                    <?php include($template_view["mur"]); ?>
+            <div id="statut">
+                <?php include($template_view["statut"]); ?>
+            </div>
+            <div id="send_Message">
+                <?php include($template_view["ecrire_message"]); ?>
+            </div>
+            <div id="mur">
+                <button type="button" style="position: fixed !important;z-index:3 !important;top: 10px !important;left: 50% !important;" class="btn btn-info btn-sm hide " id="nouveauxMessages">Nouveaux Messages</button>
+                <?php include($template_view["mur"]); ?>
 
-                </div>
+            </div>
         </div>
         <div class="col-sm-3" id="listeUser">
             <?php include($template_view["listeUsers"]); ?>
         </div>
+
+
     </div>
     <footer class="section section-primary">
 
     </footer>
 </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/bootstrap-toggle.min.js"></script>
-    <script src="js/chat.js"></script>
-    <script src="js/logo.js"></script>
-    <script src="js/message.js"></script>
-    <script src="js/listUser.js"></script>
-    <script src="js/ecrire_message"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap-toggle.min.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/logo.js"></script>
+<script src="js/message.js"></script>
+<script src="js/listUser.js"></script>
+<script src="js/ecrire_message"></script>
 </body>
 </html>

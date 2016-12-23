@@ -54,16 +54,21 @@ $(function () {
         }
     ).on("mouseenter", function () {
         var _this = this;
+        var timeID2 = null;
         timeID = setTimeout(function () {
             var inf = $(_this).children(".hidden");
             inf2 = $(inf).attr("id");
             $(_this).popover("show");
+            $(".popover").on("mouseenter", function () {
+                clearTimeout(timeID2);
+                timeID2 = null;
+                delete timeID2;
+            });
             $(".popover").on("mouseleave", function () {
-                setTimeout(function () {
+                timeID2 = setTimeout(function () {
                     $(_this).popover('hide');
                     inf2 = -1;
                 }, 1500);
-
             });
             $("#imageMessage2").on("click", function () {
                 $("#fichierMessage2").trigger("click");
@@ -79,7 +84,6 @@ $(function () {
                     ""+
                     "");
             });
-
 
             $('#image2').on('click', '#removeImage2', function() {
                 $("#imageMessage2").removeClass("active");

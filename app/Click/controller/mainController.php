@@ -17,7 +17,7 @@ class mainController{
 
 
         if(context::getSessionAttribute("utilisateur") !== NULL) {
-          $context->redirect("Click.php?action=index");  
+            $context->redirect("Click.php?action=index");
         }
         else {
 
@@ -105,9 +105,9 @@ class mainController{
     public static function mur($request,$context){
         $user = (isset($request["user"])) ?strval($request["user"]): context::getSessionAttribute("utilisateur")->id;
         if(!isset($request['id']) )
-        $context->messages = messageTable::getUserMessageById($user);
+            $context->messages = messageTable::getUserMessageById($user);
         else
-           $context->messages = messageTable::getMessagesAfterId(strval($request['id']),$user);
+            $context->messages = messageTable::getMessagesAfterId(strval($request['id']),$user);
         return context::SUCCESS;
     }
     public static function statut($request,$context){
@@ -144,23 +144,23 @@ class mainController{
             $context->redirect("Click.php?action=login");
         }
         // On verifie est ce qu'on veut consulter un profil
-       if(empty($request["user"])) {
-           $context->isuser = true;
-           $context->user = context::getSessionAttribute("utilisateur");
-       }
+        if(empty($request["user"])) {
+            $context->isuser = true;
+            $context->user = context::getSessionAttribute("utilisateur");
+        }
         // SInon
-       else {
-           $context->usercur = context::getSessionAttribute("utilisateur");
-           $context->user =  utilisateurTable::getUserById($request["user"]);
-           $context->isuser = ($context->usercur->id == $context->user->id);
+        else {
+            $context->usercur = context::getSessionAttribute("utilisateur");
+            $context->user =  utilisateurTable::getUserById($request["user"]);
+            $context->isuser = ($context->usercur->id == $context->user->id);
 
-       }
+        }
 
-    	$context->template[] = "listeUsers";
+        $context->template[] = "listeUsers";
         $context->template[] = "mur";
         $context->template[] = "chat";
-    	$context->template[] = "profil";
-    	$context->template[] = "statut";
+        $context->template[] = "profil";
+        $context->template[] = "statut";
         $context->template[] = "ecrire_message";
 
         return context::SUCCESS;
@@ -181,7 +181,7 @@ class mainController{
             if ($_FILES["image"]["size"] == 0) {
 
                 if($request['message'] != "") {
-                   messageTable::addMessage($emetteur, $destinataire, $request['message'],"");
+                    messageTable::addMessage($emetteur, $destinataire, $request['message'],"");
                     $context->info = $emetteur->id. " ". $destinataire->id." ".$request['message'];
                     $avatar = 0;
                 }
@@ -192,7 +192,7 @@ class mainController{
                 if ($check !== false) {
 
                     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                         messageTable::addMessage($emetteur,$destinataire,$request['message'],basename($_FILES["image"]["name"]));
+                        messageTable::addMessage($emetteur,$destinataire,$request['message'],basename($_FILES["image"]["name"]));
 
                         $avatar = 1;
 
@@ -206,7 +206,7 @@ class mainController{
                 }
 
             }
-           if (isset($avatar))
+            if (isset($avatar))
                 $context->info = "Message Envoyé";
             else {
                 $context->info = "Erreur envoie";
