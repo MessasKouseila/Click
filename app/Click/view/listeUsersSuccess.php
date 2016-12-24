@@ -2,15 +2,15 @@
         id="animation" data-toggle="tooltip" title="Liste des utilisateurs">
     <i class="glyphicon glyphicon-list"></i>
 </button>
-<div class="panel panel-primary fixed-bottom definelong nopadding toggler" id="effect" style="display : none;">
+<div class="panel panel-primary fixed-bottom nopadding toggler" id="effect" style="display : none;">
     <div class="panel-heading">
 		<span class="btn btn-xs  pull-left" id="buttonreduire">
             <span class="glyphicon glyphicon-minus"></span>
 		</span>
         <h3 class="panel-title">Liste Utilisateur</h3>
     </div>
-    <div class="panel-body definelong nopadding">
-        <ul id="bodyuser" class="list-group">
+    <div id="bodyuser" class="panel-body nopadding">
+        <ul class="list-group nopadding">
             <?php foreach ($context->users as $user) : ?>
                 <a href="<?php echo "Click.php?action=index&user=" . $user->id ?>" data-toggle="tooltip"
                    title="<?php echo $user->statut; ?>">

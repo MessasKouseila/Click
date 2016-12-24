@@ -58,7 +58,15 @@
     font-family: 'Economica';
     src: url('../fonts/Economica/Economica-Regular.ttf') format('truetype');
 }
-
+.nopadding2
+{
+    padding: 0px 0px 0px 0px !important;
+}
+.nopadding
+{
+    padding: 1px !important;
+    margin: 0 !important;
+}
 
 #logo1
 {
