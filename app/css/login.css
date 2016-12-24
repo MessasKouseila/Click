@@ -1,8 +1,4 @@
 @font-face {
-    font-family: 'Righteous-Regular';
-    src: url('../fonts/Righteous/Righteous-Regular.ttf') format('truetype');
-}
-@font-face {
     font-family: 'Monoton';
     src: url('../fonts/Monoton/Monoton-Regular.ttf') format('truetype');
 }
@@ -10,7 +6,7 @@
 {
     font-family: 'Monoton';
     font-size: larger;
-    padding-top: 10px;
+    text-align: center;
 }
 #session_persiste
 {

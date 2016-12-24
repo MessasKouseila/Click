@@ -14,9 +14,55 @@
     font-family: 'Monoton';
     src: url('../fonts/Monoton/Monoton-Regular.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Audiowide';
+    src: url('../fonts/Audiowide/Audiowide-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Monofett';
+    src: url('../fonts/Monofett/Monofett.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Teko';
+    src: url('../fonts/Teko/Teko-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Teko';
+    src: url('../fonts/Teko/Teko-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Teko';
+    src: url('../fonts/Teko/Teko-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Teko';
+    src: url('../fonts/Teko/Teko-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Aldrich';
+    src: url('../fonts/Aldrich/Aldrich-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('../fonts/Rajdhani/Rajdhani-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Economica';
+    src: url('../fonts/Economica/Economica-Regular.ttf') format('truetype');
+}
+
+
 #logo1
 {
     font-family: 'Monoton';
     font-size: larger;
-    padding-top: 10px;
+    text-align: center !important;
 }

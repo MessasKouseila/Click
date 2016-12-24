@@ -63,6 +63,8 @@ $(function () {
         $("#newMessages").html("");
         updateChat();
         $("#nbr_chat").removeClass("flash");
+        $("#nbr_chat").css( "background-color", "white" );
+
 
     });
     // envoie le message sur la bdd via ajax
@@ -77,7 +79,7 @@ $(function () {
                 success: function (code_html, statut) {
                     $( "#headChat" ).css( "background-color", "#16A600" );
                     window.setTimeout( function() {
-                        $( "#headChat" ).css( "background-color", "#1b6d85" );
+                        $( "#headChat" ).css( "background-color", "rgb(64, 128, 255)" );
                     }, 1000 );
                 },
                 error: function (resultat, statut, erreur) {
@@ -122,6 +124,7 @@ function updateChat() {
                 if ((diff1 - diff2) != 0) {
                     $("#nbr_chat").effect("bounce", "slow");
                     $("#nbr_chat").addClass("flash");
+                    $("#nbr_chat").css( "background-color", "#F5FB92" );
                 }
             }
         },

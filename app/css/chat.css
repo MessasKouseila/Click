@@ -496,7 +496,7 @@
     top: 0%;
     left: 0px;
     right:auto;
-    background-color: #1b6d85;
+    background-color: rgb(64, 128, 255);
     color: #080808;
 }
 #actualiser
@@ -532,6 +532,7 @@
     width: 20%;
     height: 60%;
     font-size: 100%;
+    font-family: 'Righteous-Regular';
 }
 #nbr_chat
 {
@@ -541,6 +542,8 @@
     bottom: 20%;
     width: 20px;
     height: 20px;
+    background-color: white;
+    color: black;
 }
 #bodyChat
 {
@@ -557,6 +560,7 @@
     width: 100%;
     top: 0%;
     background-color: #f1f0e4;
+    font-family: 'Aldrich';
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -564,11 +568,61 @@
 {
     position: absolute;
     height: 15%;
-    width: auto;
+    width: 100%;
     left: 0%;
     right: 0%;
     bottom: 0%;
-    background-color: #1b6d85;
+    background-color: rgb(64, 128, 255);
+}
+#btn-chat
+{
+    position: absolute;
+    right: 2.5%;
+    bottom: 5%;
+    top: 5%;
+    width: 15%;
+    height: 90%;
+    color: white;
+    background-color: #00a646;
+    border-color: black;
+}
+#btn-chat:hover
+{
+    background-color: #2ef31b;
+    border-color: gold;
+}
+#iconSend
+{
+    position: absolute;
+    right: 10%;
+    left: 10%;
+    top: 20%;
+    font-size: 18px;
+}
+#btn-input
+{
+    position: absolute;
+    left: 2.5%;
+    bottom: 5%;
+    top: 5%;
+    width: 80%;
+    height: 90%;
+    border-color: #000000;
+}
+#btn-input:hover
+{
+    border-color: gold;
+}
+#text_chat
+{
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+    top: 5%;
+    height: 90%;
+    width: 80%;
+    border-color: #000000;
 }
 #time_chat
 {
@@ -577,12 +631,13 @@
 #sendChat
 {
     position: absolute;
-    bottom: 2%;
-    top: auto;
-    left: 1%;
-    right: auto;
-    width: 95%;
-    height: 85%;
+    bottom: 5%;
+    top: 5%;
+    left: 2%;
+    right: 2%;
+    width: 96%;
+    height: 90%;
+    margin-bottom: 0px;
 }
 
 .nopadding2
@@ -664,18 +719,18 @@ input:checked + .slider:before {
 
 @-webkit-keyframes flash {
     0% { background-color: none; }
-    50% { background-color: #fbf8b2; }
+    50% { background-color: #f5fb92; }
     100% { background-color: none; }
 }
 
 @-moz-keyframes flash {
     0% { background-color: none; }
-    50% { background-color: #fbf8b2; }
+    50% { background-color: #f5fb92; }
     100% { background-color: none; }
 }
 
 @-ms-keyframes flash {
     0% { background-color: none; }
-    50% { background-color: #fbf8b2; }
+    50% { background-color: #f5fb92; }
     100% { background-color: none; }
 }

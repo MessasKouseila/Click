@@ -47,9 +47,9 @@
         <form id="sendChat" class=" form-inline nopadding">
             <div id="text_chat" class="input-group">
                 <input id="btn-input" type="text" name="chat" placeholder="Exprime toi ici" class="form-control">
-                <span class="input-group-btn">
-                    <button id="btn-chat" type="submit" class="btn btn-primary btn-flat">Send</button>
-                </span>
+                <button id="btn-chat" type="submit" class="btn btn-primary btn-flat">
+                    <span id="iconSend" class="glyphicon glyphicon-send"></span>
+                </button>
             </div>
         </form>
     </div>
