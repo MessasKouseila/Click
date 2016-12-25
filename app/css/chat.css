@@ -464,6 +464,10 @@
 {
     height: 30px !important;
 }
+.hideON2
+{
+    width: 200px !important;
+}
 #containerChat {
     z-index: 100000000;
     position: absolute;
@@ -502,7 +506,7 @@
 #actualiser
 {
     position: relative;
-    right: 5px;
+    right: 15px;
     color: #000000;
 }
 #option_chat
@@ -518,9 +522,13 @@
     top: 5%;
     height: 80%;
 }
+#fermer_chat
+{
+    left: 35px;
+}
 #agrandire
 {
-
+    right: 10px;
 }
 #title_chat
 {

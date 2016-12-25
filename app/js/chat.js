@@ -9,7 +9,7 @@ $(function () {
         }
     ).resizable(
         {
-            containment: "#contenuALL",
+            containment: "parent",
             handles: "s, n, w, e",
             maxHeight: 600,
             maxWidth: 960,
@@ -25,6 +25,7 @@ $(function () {
         }
     });
     $(document).ready(function () {
+        var taille_head = $("#headChat").width();
         $("#btn-chat").on("mouseover", function () {
             $("#btn-chat").css("color", "black");
         });
@@ -42,15 +43,26 @@ $(function () {
                 $("#bodyChat").toggleClass("hidden");
                 $("#footerChat").toggleClass("hidden");
 
-                var c = $("#containerChat").hasClass("hiddenMessage");
-                if (c) {
+                var controle1 = $("#containerChat").hasClass("hiddenMessage");
+                if (controle1) {
                     $("#agrandire").toggleClass("glyphicon-minus");
                     $("#agrandire").toggleClass("glyphicon-modal-window");
                 } else {
                     $("#agrandire").toggleClass("glyphicon-modal-window");
                     $("#agrandire").toggleClass("glyphicon-minus");
+                    $("#containerChat").css("top","294.75px");
                 }
                 return false;
+            }
+        );
+        $("#fermer_chat").click(
+            function () {
+                var controle1 = $("#containerChat").hasClass("hiddenMessage");
+                if(!controle1) {
+                    $("#agrandire").trigger("click");
+                }
+                $("#containerChat").css("left","0px");
+                $("#containerChat").css("top","625px");
             }
         );
         $("#chatsMessage").scrollTop(1E10 * 50);

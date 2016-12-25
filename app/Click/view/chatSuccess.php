@@ -11,6 +11,7 @@
             </label>
         </span>
         <div class="box-tools pull-right" id="option_chat">
+            <span id="fermer_chat" class="glyphicon glyphicon-remove pull right"></span>
             <span id="agrandire" class=" pull-right glyphicon glyphicon-minus"></span>
             <span id="actualiser" class="glyphicon glyphicon-refresh pull-right"></span>
         </div>
