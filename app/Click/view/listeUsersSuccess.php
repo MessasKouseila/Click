@@ -9,8 +9,8 @@
 		</span>
         <h3 class="panel-title">Liste Utilisateur</h3>
     </div>
-    <div id="bodyuser" class="panel-body nopadding">
-        <ul class="list-group nopadding">
+    <div id="bodyuser" class="panel-body">
+        <ul class="list-group" id="usersListe">
             <?php foreach ($context->users as $user) : ?>
                 <a href="<?php echo "Click.php?action=index&user=" . $user->id ?>" data-toggle="tooltip"
                    title="<?php echo $user->statut; ?>">

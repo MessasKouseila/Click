@@ -19,10 +19,20 @@
 #bodyuser
 {
     position: absolute;
-    top: 38px;
-    height: 93%;
+    top: 40px;
+    height: 91%;
     width: 99%;
+    padding: 5px 5px 5px 5px;
     overflow-y: scroll;
+}
+#usersListe{
+    position: absolute;
+    top: 3px;
+    left: 0%;
+    right: 0%;
+    width: 100%;
+    height: 95%;
+    padding: 5px 5px 5px 5px;
 }
 #elements
 {
