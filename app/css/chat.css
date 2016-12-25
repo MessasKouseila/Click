@@ -583,13 +583,12 @@
     width: 15%;
     height: 90%;
     color: white;
-    background-color: #00a646;
+    background-color: #2ef31b;
     border-color: black;
 }
 #btn-chat:hover
 {
-    background-color: #2ef31b;
-    border-color: gold;
+    background-color: gold;
 }
 #iconSend
 {
@@ -639,6 +638,7 @@
     height: 90%;
     margin-bottom: 0px;
 }
+
 
 .switch {
     position: relative;

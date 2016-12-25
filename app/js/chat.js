@@ -25,6 +25,12 @@ $(function () {
         }
     });
     $(document).ready(function () {
+        $("#btn-chat").on("mouseover", function () {
+            $("#btn-chat").css("color", "black");
+        });
+        $("#btn-chat").on("mouseleave", function () {
+            $("#btn-chat").css("color", "white");
+        });
         $("#newMessages").html("");
         info = $( ".direct-chat-messages#chatsMessage > .direct-chat-msg:last-child" );
         id = info.attr("id");
