@@ -50,7 +50,7 @@ $(function () {
                 } else {
                     $("#agrandire").toggleClass("glyphicon-modal-window");
                     $("#agrandire").toggleClass("glyphicon-minus");
-                    $("#containerChat").css("top","294.75px");
+                    $("#containerChat").css("top","auto");
                 }
                 return false;
             }
@@ -62,7 +62,7 @@ $(function () {
                     $("#agrandire").trigger("click");
                 }
                 $("#containerChat").css("left","0px");
-                $("#containerChat").css("top","625px");
+                $("#containerChat").css("top","95%");
             }
         );
         $("#chatsMessage").scrollTop(1E10 * 50);
