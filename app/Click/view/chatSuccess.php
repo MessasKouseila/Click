@@ -27,15 +27,14 @@
                             <?php echo ($chat->emetteur != NULL) ? $chat->emetteur->nom : "nom"; ?>
                         </span >
                         <span id="time_chat" class="direct-chat-timestamp pull-right">
-                            <?php echo $chat->post->date->format('y/m/d H:i:s'); ?>
+                            <?php echo ($chat->post !== NULL) ? $chat->post->date->format('y/m/d H:i:s') : "01/01/1899"; ?>
                         </span>
                     </div>
                     <img class="direct-chat-img"
                          src="<?php echo ($chat->emetteur->avatar === NULL) ? "image/default.jpeg" : $chat->emetteur->avatar; ?>"
                          alt="User Avatar">
                     <div class="direct-chat-text text-justify">
-                        <?php
-                            echo htmlspecialchars($chat->post->texte);
+                        <?php echo($chat->post !== NULL) ? htmlspecialchars($chat->post->texte) : "Undifinde";
                             $id = $chat->id;
                         ?>
                     </div>

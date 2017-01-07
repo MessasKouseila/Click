@@ -1,4 +1,4 @@
-<div class="row message" id="<?php echo $message->id ?>">
+<div class="row message" >
     <div class="col-sm-12">
         <div class="well">
 
@@ -18,11 +18,11 @@
             </div>
             <p><?php echo htmlspecialchars($message->post->texte); ?></p>
             <div class="row">
-                <button type="button" class="btn btn-primary btn-xs pull-left aime">
+                <button type="button" class="btn btn-primary btn-xs pull-left">
                     <span class="glyphicon glyphicon-thumbs-up"></span> Click
-                    <span class="badge nbaime"><?php echo$message->aime; ?></span>
+                    <span class="badge"><?php echo$message->aime; ?></span>
                 </button>
-                <button type="button" class="btn  btn-default btn-xs partager" > Partager </button>
+                <button type="button" class="btn  btn-default btn-xs" > Partager </button>
                 <p class="pull-right">Publie il y'a: <?php echo date_diff($message->post->date,new DateTime("now"))->format('%a days'); ?></p>
             </div>
         </div>
