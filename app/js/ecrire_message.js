@@ -41,12 +41,17 @@ $("#envoyerMessage").click(function(e)
            if(code_html == "Message Envoyé")
            {
                $("#alertEnvoiMessage").attr("class","alert-success center");
+               $("#textareaMessage").val("");
+               $("#removeImage").trigger("click");
                $("#alertEnvoiMessage").html(code_html);
            }
            else {
                $("#alertEnvoiMessage").attr("class","alert-danger center");
                $("#alertEnvoiMessage").html(code_html);
            }
+            setTimeout(function() {
+                $("#alertEnvoiMessage").html("");
+            }, 30000);
 
         },
 

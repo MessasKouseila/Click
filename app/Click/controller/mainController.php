@@ -165,6 +165,10 @@ class mainController{
 
         return context::SUCCESS;
     }
+
+
+
+
     public static function envoyerMessage($request,$context){
         $emetteur = context::getSessionAttribute("utilisateur");
         ///Redirection Si l'utilisateur n'est pas connecte
@@ -231,6 +235,19 @@ class mainController{
         return context::SUCCESS;
     }
 
+    public static function modificationStatut($request,$context){
+        $context->info = false;
+        $user = $context::getSessionAttribute("utilisateur");
+        ///Redirection Si l'utilisateur n'est pas connecte
+        if($user === NULL) {
+            $context->redirect("Click.php?action=login");
+        }
+        if(isset($request['statut']))
+            if(utilisateurTable::setStatut(strval($user->id),$request['statut']))
+                $user->statut =htmlspecialchars($request['statut']) ;
+
+        return context::SUCCESS;
+    }
 
 
     public static function partagerMessage($request,$context){

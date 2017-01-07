@@ -89,6 +89,7 @@
 <script src="js/logo.js"></script>
 <script src="js/message.js"></script>
 <script src="js/listUser.js"></script>
-<script src="js/ecrire_message"></script>
+<script src="js/statut.js"></script>
+<script src="js/ecrire_message.js"></script>
 </body>
 </html>

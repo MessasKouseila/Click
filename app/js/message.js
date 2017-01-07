@@ -10,10 +10,11 @@ function updateMessage() {
         dataType: 'html',
 
         success: function (code_html, statut) {
-           if(code_html != "") {
-               $("#nouveauxMessages").removeClass("hide");
-               $("#mur div").first().before(code_html);
-           }
+            if(code_html != "") {
+
+                $("#nouveauxMessages").removeClass("hide");
+                $("#mur div").first().before(code_html);
+            }
         },
         error: function (resultat, statut, erreur) {
         },
@@ -34,44 +35,44 @@ $("#nouveauxMessages").click(function () {
 );
 $('#mur').on('click', '.aime', function() {
 
-    var id = $(this).parent().parent().parent().parent().attr("id");
-    $.ajax({
-        url: 'ClickJS.php?action=aimerMessage',
-        type: 'POST',
-        data: 'id=' + id ,
-        dataType: 'html',
+        var id = $(this).parent().parent().parent().parent().attr("id");
+        $.ajax({
+            url: 'ClickJS.php?action=aimerMessage',
+            type: 'POST',
+            data: 'id=' + id ,
+            dataType: 'html',
 
-        success: function (code_html, statut) {
+            success: function (code_html, statut) {
 
-        },
-        error: function (resultat, statut, erreur) {
-        },
-        complete: function (resultat, statut) {
+            },
+            error: function (resultat, statut, erreur) {
+            },
+            complete: function (resultat, statut) {
 
-        }
-    });
-    $(this).children(".nbaime").text(parseInt($(this).children(".nbaime").text())+1);
+            }
+        });
+        $(this).children(".nbaime").text(parseInt($(this).children(".nbaime").text())+1);
     }
 );
 
 $('#mur').on('click', '.partager', function() {
 
         var id = $(this).parent().parent().parent().parent().attr("id");
-    $.ajax({
-        url: 'ClickJS.php?action=partagerMessage',
-        type: 'POST',
-        data: 'id=' + id ,
-        dataType: 'html',
+        $.ajax({
+            url: 'ClickJS.php?action=partagerMessage',
+            type: 'POST',
+            data: 'id=' + id ,
+            dataType: 'html',
 
-        success: function (code_html, statut) {
+            success: function (code_html, statut) {
 
-        },
-        error: function (resultat, statut, erreur) {
-        },
-        complete: function (resultat, statut) {
+            },
+            error: function (resultat, statut, erreur) {
+            },
+            complete: function (resultat, statut) {
 
-        }
-    });
+            }
+        });
         $(this).children(".nbaime").text(parseInt($(this).children(".nbaime").text())+1);
     }
 );
