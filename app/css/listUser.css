@@ -1,12 +1,12 @@
 #listeUser
 {
-    z-index: 1000;
+    z-index: 100;
     position: fixed;
     right: 10px;
     left: auto;
     bottom: 3px;
     top: 72px;
-    height: 85%;
+    height: 0%;
     width: 25%;
 }
 #effect
@@ -19,8 +19,8 @@
 #bodyuser
 {
     position: absolute;
-    top: 40px;
-    height: 91%;
+    top: 70px;
+    height: 85%;
     width: 99%;
     padding: 5px 5px 5px 5px;
     overflow-y: scroll;

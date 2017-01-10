@@ -4,28 +4,21 @@
  * Toutes les actions disponibles dans l'application 
  *
  */
-
 class mainController{
-
     public static function helloWorld($request,$context){
         $context->mavariable="hello world".utilisateurTable::getUsers()[1]->id;
         $context->notify ="ceci est un message d'erreur issue de l'action helloWorld";
         return context::SUCCESS;
     }
-
     public static function login($request,$context){
-
-
         if(context::getSessionAttribute("utilisateur") !== NULL) {
             $context->redirect("Click.php?action=index");
         }
         else {
-
             if(isset($request["login"], $request["passWord"])) {
                 $user = utilisateurTable::getUserByLoginAndPass($request["login"],$request["passWord"]);
                 if (!isset($user)) {
                     $context->notify = "aucun utilisateur de ce type";
-
                     return context::ERROR;
                 }
                 else {
@@ -37,7 +30,6 @@ class mainController{
                 return context::ERROR;
             }
         }
-
     }
     public static function logout($request,$context){
         context::setSessionAttribute("utilisateur", NULL);
@@ -56,7 +48,6 @@ class mainController{
             return context::ERROR;
         }
     }
-
     public static function listeUsers($request,$context){
         $context->users = utilisateurTable::getUsers();
         return context::SUCCESS;
@@ -111,7 +102,6 @@ class mainController{
         return context::SUCCESS;
     }
     public static function statut($request,$context){
-
         ///Redirection Si l'utilisateur n'est pas connecte
         if(context::getSessionAttribute("utilisateur") === NULL) {
             $context->redirect("Click.php?action=login");
@@ -127,7 +117,6 @@ class mainController{
             $context->isuser = ($context->usercur->id == $request["user"]);
             $context->user =  utilisateurTable::getUserById($request["user"]);
         }
-
         return context::SUCCESS;
     }
     public function  ecrire_message($request,$context)
@@ -153,22 +142,15 @@ class mainController{
             $context->usercur = context::getSessionAttribute("utilisateur");
             $context->user =  utilisateurTable::getUserById($request["user"]);
             $context->isuser = ($context->usercur->id == $context->user->id);
-
         }
-
         $context->template[] = "listeUsers";
         $context->template[] = "mur";
         $context->template[] = "chat";
         $context->template[] = "profil";
         $context->template[] = "statut";
         $context->template[] = "ecrire_message";
-
         return context::SUCCESS;
     }
-
-
-
-
     public static function envoyerMessage($request,$context){
         $emetteur = context::getSessionAttribute("utilisateur");
         ///Redirection Si l'utilisateur n'est pas connecte
@@ -181,9 +163,7 @@ class mainController{
             $destinataire = utilisateurTable::getUserById($request['id']);
         if(isset($emetteur) && isset($destinataire) && isset($request['message']) && isset($_FILES["image"])) {
             $avatar = null;
-
             if ($_FILES["image"]["size"] == 0) {
-
                 if($request['message'] != "") {
                     messageTable::addMessage($emetteur, $destinataire, $request['message'],"");
                     $context->info = $emetteur->id. " ". $destinataire->id." ".$request['message'];
@@ -194,21 +174,15 @@ class mainController{
                 $target_file = $target_dir . basename($_FILES["image"]["name"]);
                 $check = @getimagesize($_FILES["image"]["tmp_name"]);
                 if ($check !== false) {
-
                     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
                         messageTable::addMessage($emetteur,$destinataire,$request['message'],basename($_FILES["image"]["name"]));
-
                         $avatar = 1;
-
                     } else {
                         $context->info = "Erreur lors de l'enregistrement du fichier";
                     }
-
                 } else {
                     $context->info = "Votre fichier n'est pas une image";
-
                 }
-
             }
             if (isset($avatar))
                 $context->info = "Message Envoyé";
@@ -222,19 +196,15 @@ class mainController{
         }
         return context::SUCCESS;
     }
-
     public static function aimerMessage($request,$context){
-
         ///Redirection Si l'utilisateur n'est pas connecte
         if($context::getSessionAttribute("utilisateur") === NULL) {
             $context->redirect("Click.php?action=login");
         }
         if(isset($request['id']))
             messageTable::aimer(strval($request['id']));
-
         return context::SUCCESS;
     }
-
     public static function modificationStatut($request,$context){
         $context->info = false;
         $user = $context::getSessionAttribute("utilisateur");
@@ -245,11 +215,8 @@ class mainController{
         if(isset($request['statut']))
             if(utilisateurTable::setStatut(strval($user->id),$request['statut']))
                 $user->statut =htmlspecialchars($request['statut']) ;
-
         return context::SUCCESS;
     }
-
-
     public static function partagerMessage($request,$context){
         $user = $context::getSessionAttribute("utilisateur");
         ///Redirection Si l'utilisateur n'est pas connecte
@@ -258,7 +225,6 @@ class mainController{
         }
         if(isset($request['id']))
             messageTable::partager(strval($request['id']),$user->id);
-
         return context::SUCCESS;
     }
 }

@@ -19,10 +19,12 @@ $(function () {
     $("#animation").on("click", function () {
         $("#animation").addClass("hide");
         runEffect();
+        $("#listeUser").css("height", "85%");
     });
     $("#buttonreduire").on("click", function () {
         $("#animation").trigger("click");
         $("#animation").removeClass("hide");
+        $("#listeUser").css("height", "0%");
     });
     $("li#userItem").popover(
         {

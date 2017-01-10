@@ -36,7 +36,7 @@ $(function () {
         info = $( ".direct-chat-messages#chatsMessage > .direct-chat-msg:last-child" );
         id = info.attr("id");
         $("#containerChat").draggable("option", "disabled", true);
-        $("#agrandire").click(
+        $("#agrandire").on("click", 
             function () {
                 $("#headChat").toggleClass("hideON");
                 $("#containerChat").toggleClass("hiddenMessage");
@@ -47,10 +47,12 @@ $(function () {
                 if (controle1) {
                     $("#agrandire").toggleClass("glyphicon-minus");
                     $("#agrandire").toggleClass("glyphicon-modal-window");
+
                 } else {
                     $("#agrandire").toggleClass("glyphicon-modal-window");
                     $("#agrandire").toggleClass("glyphicon-minus");
                     $("#containerChat").css("top","auto");
+                    updateChat();
                 }
                 return false;
             }
@@ -75,11 +77,9 @@ $(function () {
         }, 1000 );
     });
     $("#actualiser").click(function (e) {
-        updateChat();
         var charger = $("#newMessages").html();
         $("#chatsMessage").append(charger);
         $("#newMessages").html("");
-        updateChat();
         $("#nbr_chat").removeClass("flash");
         $("#nbr_chat").css( "background-color", "white" );
 
@@ -98,13 +98,13 @@ $(function () {
                     $( "#headChat" ).css( "background-color", "#16A600" );
                     window.setTimeout( function() {
                         $( "#headChat" ).css( "background-color", "rgb(64, 128, 255)" );
-                    }, 1000 );
+                    }, 1500 );
                 },
                 error: function (resultat, statut, erreur) {
                     $( "#headChat" ).css( "background-color", "#851C00" );
                     window.setTimeout( function() {
                         $( "#headChat" ).css( "background-color", "#1b6d85" );
-                    }, 1000 );
+                    }, 1500 );
                 },
                 complete: function (resultat, statut) {
                 }
@@ -112,7 +112,7 @@ $(function () {
             updateChat();
             $("#btn-input").val("");
         }
-        $("#chatsMessage").scrollTop(1E10 * 50);
+        $("#chatsMessage").scrollTop(1E10 * 80);
         return false;
     });
 });
@@ -128,6 +128,7 @@ function updateChat() {
         success: function (code_html, statut) {
             // je recupere les nouveau message puis je calcule le nombre de nouveau message
             $("#newMessages").html(code_html);
+            var controle = $("#containerChat").hasClass("hiddenMessage");
             var lastmessge = $(".hidden#newMessages > .direct-chat-msg:last-child");
             id2 = lastmessge.attr("id");
             if(id2 == null) {
@@ -137,19 +138,36 @@ function updateChat() {
                 diff1 = parseInt(id2);
                 diff2 = parseInt(id);
             }
-            $("#nbr_chat").text(diff1 - diff2);
-            if(id2 != null) {
+            if (!controle) {
                 if ((diff1 - diff2) != 0) {
-                    $("#nbr_chat").effect("bounce", "slow");
-                    $("#nbr_chat").addClass("flash");
-                    $("#nbr_chat").css( "background-color", "#F5FB92" );
+                    $( "#headChat" ).css( "background-color", "#F3DA51" );
+                    window.setTimeout( function() {
+                        $( "#headChat" ).css( "background-color", "rgb(64, 128, 255)" );
+                    }, 300 );
                 }
+                $("#actualiser").trigger("click");
             }
+            lastmessge = $(".hidden#newMessages > .direct-chat-msg:last-child");
+            id2 = lastmessge.attr("id");
+            if(id2 == null) {
+                diff1 = parseInt(id);
+                diff2 = parseInt(id);
+            } else {
+                diff1 = parseInt(id2);
+                diff2 = parseInt(id);
+            }
+            $("#nbr_chat").text(diff1 - diff2);
+            if ((diff1 - diff2) != 0) {
+                $("#nbr_chat").effect("bounce", "slow");
+                $("#nbr_chat").addClass("flash");
+                $("#nbr_chat").css( "background-color", "#F5FB92" );
+            }
+            $("#chatsMessage").scrollTop(1E10 * 80);
         },
         error: function (resultat, statut, erreur) {
         },
         complete: function (resultat, statut) {
-            // j'actualise ma derniere id
+            // j'actualise mon dernier id
             info = $( ".direct-chat-messages#chatsMessage > .direct-chat-msg:last-child" );
             id = info.attr("id");
         }

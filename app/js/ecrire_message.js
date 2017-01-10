@@ -71,6 +71,3 @@ $("#envoyerMessage").click(function(e)
 
     });
 });
-
-
-

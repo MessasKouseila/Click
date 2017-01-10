@@ -1,14 +1,11 @@
 <?php
-
 /* Classe Outils en lien avec l'entité utilisateur
 	composée de méthodes statiques
 */
 // SY OMAR
 class utilisateurTable {
-
 public static function getUserByLoginAndPass($login,$pass){
 	$em = dbconnection::getInstance()->getEntityManager();
-
 	$userRepository = $em->getRepository('utilisateur');
 	$user = $userRepository->findOneBy(array('identifiant' => $login, 'pass' => sha1($pass)));	
 	
@@ -18,10 +15,8 @@ public static function getUserByLoginAndPass($login,$pass){
 	}
 	return $user; 
 }
-
 public static function getUserById($id){
 	$em = dbconnection::getInstance()->getEntityManager();
-
 	$userRepository = $em->getRepository('utilisateur');
 	$user = $userRepository->findOneBy(array('id' => $id));	
 	
@@ -33,7 +28,6 @@ public static function getUserById($id){
 }
 public static function getUsers(){
 	$em = dbconnection::getInstance()->getEntityManager();
-
 	$userRepository = $em->getRepository('utilisateur');
 	$users = $userRepository->findAll();	
 	
@@ -43,7 +37,6 @@ public static function getUsers(){
 	}
 	return $users; 
 }
-
 	public static function setStatut($id,$statut)
 	{
 		$user = self::getUserById($id);
@@ -56,8 +49,6 @@ public static function getUsers(){
 			$em->flush();
 			return true;
 		}
-
 	}
 }
-
 ?>

@@ -8,7 +8,7 @@
             <textarea class="form-control" rows="3" placeholder="Ecrivez votre message" name="message" id="textareaMessage"></textarea>
         </div>
         <p></p>
-        <div class="row">
+        <div class="row" id="sendBtnDiv">
             <input type="submit" class="btn btn-info pull-right" id="envoyerMessage" value="Envoyer">
             <div class=" pull-left" id="image"></div>
         </div>
@@ -16,5 +16,3 @@
         <input type="text" class="hide" value="<?php echo $context->user->id; ?>" name="id">
     </form>
 </div>
-
-
