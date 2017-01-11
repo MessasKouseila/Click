@@ -1,6 +1,6 @@
 <?php
 /*
- * All doc on : ddd
+ * All doc on :
  * Toutes les actions disponibles dans l'application 
  *
  */
