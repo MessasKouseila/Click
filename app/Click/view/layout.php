@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="" id="logo1">C L I C K</a>
+            <a class="navbar-brand" href="https://pedago.univ-avignon.fr/~uapv1600147/Click/app/Click.php?action=index" id="logo1">C L I C K</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
