@@ -140,7 +140,7 @@ function updateChat() {
             }
             if (!controle) {
                 if ((diff1 - diff2) != 0) {
-                    $( "#headChat" ).css( "background-color", "#F3DA51" );
+                    $( "#headChat" ).css( "background-color", "#FFD700" );
                     window.setTimeout( function() {
                         $( "#headChat" ).css( "background-color", "rgb(64, 128, 255)" );
                     }, 300 );
