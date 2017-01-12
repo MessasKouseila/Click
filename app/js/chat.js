@@ -138,14 +138,19 @@ function updateChat() {
                 diff1 = parseInt(id2);
                 diff2 = parseInt(id);
             }
+            var scroll = 0;
             if (!controle) {
                 if ((diff1 - diff2) != 0) {
+                    scroll = 1;
                     $( "#headChat" ).css( "background-color", "#FFD700" );
                     window.setTimeout( function() {
                         $( "#headChat" ).css( "background-color", "rgb(64, 128, 255)" );
                     }, 300 );
                 }
                 $("#actualiser").trigger("click");
+                if (scroll == 1) {
+                    $("#chatsMessage").scrollTop(1E15 * (diff2));
+                }
             }
             lastmessge = $(".hidden#newMessages > .direct-chat-msg:last-child");
             id2 = lastmessge.attr("id");
@@ -161,7 +166,6 @@ function updateChat() {
                 $("#nbr_chat").effect("bounce", "slow");
                 $("#nbr_chat").addClass("flash");
                 $("#nbr_chat").css( "background-color", "#F5FB92" );
-                $("#chatsMessage").scrollTop(1E10 * 80);
             }
         },
         error: function (resultat, statut, erreur) {
