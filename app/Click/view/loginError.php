@@ -38,10 +38,6 @@
                 <div class="form-group" id="boutton_connexion">
                     <input type="submit" class="btn btn-lg btn-primary btn-block" value="Se Connecter">
                 </div>
-                <label class="checkbox pull-left" id="session_persiste">
-                    <input type="checkbox" value="persistance">
-                    <p> Garder la session </p>
-                </label>
             </div>
         </div>
     </fieldset>
