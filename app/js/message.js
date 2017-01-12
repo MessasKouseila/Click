@@ -34,7 +34,8 @@ $("#nouveauxMessages").click(function () {
 
 );
 $('#mur').on('click', '.aime', function() {
-
+        $(this).addClass('disabled');
+        var elem = $(this);
         var id = $(this).parent().parent().parent().parent().attr("id");
         $.ajax({
             url: 'ClickJS.php?action=aimerMessage',
@@ -43,20 +44,23 @@ $('#mur').on('click', '.aime', function() {
             dataType: 'html',
 
             success: function (code_html, statut) {
-
+                elem.removeClass('disabled');
+                elem.children(".nbaime").text(parseInt(elem.children(".nbaime").text())+1);
             },
             error: function (resultat, statut, erreur) {
+                elem.removeClass('disabled');
             },
             complete: function (resultat, statut) {
 
             }
         });
-        $(this).children(".nbaime").text(parseInt($(this).children(".nbaime").text())+1);
+
     }
 );
 
 $('#mur').on('click', '.partager', function() {
-
+        $(this).addClass('disabled');
+        var elem = $(this);
         var id = $(this).parent().parent().parent().parent().attr("id");
         $.ajax({
             url: 'ClickJS.php?action=partagerMessage',
@@ -65,9 +69,10 @@ $('#mur').on('click', '.partager', function() {
             dataType: 'html',
 
             success: function (code_html, statut) {
-
+                elem.removeClass('disabled');
             },
             error: function (resultat, statut, erreur) {
+                elem.removeClass('disabled');
             },
             complete: function (resultat, statut) {
 

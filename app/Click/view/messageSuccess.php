@@ -8,7 +8,8 @@
             </div>
             <?php if($message->parent->id != $message->emetteur->id) : ?>
                 <div class="row pull-right">
-                    <a href="<?php echo "Click.php?action=index&user=".$message->parent->id ?>"> <img src="<?php echo ($message->parent->avatar === NULL)?"image/default.jpeg":$message->parent->avatar ;?>" class="img-circle" height="30" width="30" alt="Avatar"> <?php echo $message->parent->nom." ".$message->parent->prenom ?></a>
+                    <a href="<?php echo "Click.php?action=index&user=".$message->parent->id ?>"> <img src="<?php echo ($message->parent->avatar === NULL)?"image/default.jpeg":$message->parent->avatar ;?>" class="img-circle" height="30" width="30" alt="Avatar"> <span class="name">
+                        <?php echo $message->parent->nom." ".$message->parent->prenom ?></span></a>
                 </div>
             <?php endif; ?>
             <div class="row">
