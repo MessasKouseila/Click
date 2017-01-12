@@ -161,8 +161,8 @@ function updateChat() {
                 $("#nbr_chat").effect("bounce", "slow");
                 $("#nbr_chat").addClass("flash");
                 $("#nbr_chat").css( "background-color", "#F5FB92" );
+                $("#chatsMessage").scrollTop(1E10 * 80);
             }
-            $("#chatsMessage").scrollTop(1E10 * 80);
         },
         error: function (resultat, statut, erreur) {
         },
