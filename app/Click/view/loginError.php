@@ -42,6 +42,7 @@
         </div>
     </fieldset>
     </form>
+        <!-- simple commentaire-->
     </div>
     <div class="panel-footer ">
         Pas enregisterer ?
