@@ -149,6 +149,7 @@ function updateChat() {
                 }
                 $("#actualiser").trigger("click");
                 if (scroll == 1) {
+                    // je scroll vers le bas au max
                     $("#chatsMessage").scrollTop(1E15 * (diff2));
                 }
             }

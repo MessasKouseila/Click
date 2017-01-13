@@ -35,8 +35,9 @@
                          src="<?php echo ($chat->emetteur->avatar === NULL) ? "image/default.jpeg" : $chat->emetteur->avatar; ?>"
                          alt="User Avatar">
                     <div class="direct-chat-text text-justify">
-                        <?php echo ($chat->post !== NULL && strlen($chat->post->texte) != 0) ? htmlspecialchars($chat->post->texte) : "MESSAGE ERREUR";
-                        $id = $chat->id;
+                        <?php
+                            echo ($chat->post !== NULL && strlen($chat->post->texte) != 0) ? htmlspecialchars($chat->post->texte) : "MESSAGE ERREUR";
+                            $id = $chat->id;
                         ?>
                     </div>
                 </div>
