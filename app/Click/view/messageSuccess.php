@@ -24,7 +24,7 @@
                     <span class="badge nbaime"><?php echo$message->aime; ?></span>
                 </button>
                 <button type="button" class="btn  btn-default btn-xs partager" > Partager </button>
-                <p class="pull-right">Publie il y'a: <?php echo date_diff($message->post->date,new DateTime("now"))->format('%a days'); ?></p>
+                <p class="pull-right">Publie il y'a: <?php echo date_diff($message->post->date,new DateTime("now"))->format('%a jours'); ?></p>
             </div>
         </div>
     </div>
