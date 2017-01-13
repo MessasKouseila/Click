@@ -91,5 +91,6 @@
 <script src="js/listUser.js"></script>
 <script src="js/statut.js"></script>
 <script src="js/ecrire_message.js"></script>
+<script src="js/profil.js"></script>
 </body>
 </html>

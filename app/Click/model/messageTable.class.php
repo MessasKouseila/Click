@@ -54,7 +54,7 @@ class messageTable {
         $post->date = new DateTime();
         $message->post = $post;
         if($avatar != "")
-            $post->image = "https://pedago02a.univ-avignon.fr/~uapv1600147/Click/app/image/images/".$avatar;
+            $post->image = "https://pedago02a.univ-avignon.fr/~uapv1601678/Click/app/image/images/".$avatar;
         $em = dbconnection::getInstance()->getEntityManager();
         $em->persist($message);
         $em->flush();

@@ -3,7 +3,7 @@ $("#imageMessage").click( function () {
         $("#fichierMessage").trigger("click");
     });
 
-$("input[type=file]").change(function (event) {
+$("input[type=file]#fichierMessage").change(function (event) {
     //alert(URL.createObjectURL(event.target.files[0]));
     $("#imageMessage").addClass("active");
     $("#image").html("<img src='" +URL.createObjectURL(event.target.files[0]) +"' class='img-responsive' height='40' width='40' style='display: inline;' > " +
@@ -25,7 +25,9 @@ $('#image').on('click', '#removeImage', function() {
 
 $("#envoyerMessage").click(function(e)
 {
+
     e.preventDefault();
+    $("#envoyerMessage").addClass('disabled');
     var val = (window.FormData) ? new FormData($("#formEnvoiMessage")[0]) : $("#formEnvoiMessage").serialize();
     $.ajax({
 
@@ -49,6 +51,7 @@ $("#envoyerMessage").click(function(e)
                $("#alertEnvoiMessage").attr("class","alert-danger center");
                $("#alertEnvoiMessage").html(code_html);
            }
+            $("#envoyerMessage").removeClass('disabled');
             setTimeout(function() {
                 $("#alertEnvoiMessage").html("");
             }, 30000);
@@ -57,8 +60,11 @@ $("#envoyerMessage").click(function(e)
 
 
         error : function(resultat, statut, erreur){
-
-
+            $("#alertEnvoiMessage").attr("class","alert-danger center");
+            $("#envoyerMessage").removeClass('disabled');
+            setTimeout(function() {
+                $("#alertEnvoiMessage").html("");
+            }, 30000);
 
         },
 

@@ -50,5 +50,20 @@ public static function getUsers(){
 			return true;
 		}
 	}
+
+    public static function setPP($id,$avatar)
+    {
+        $user = self::getUserById($id);
+        if($user == null)
+            return false;
+        else{
+            if($avatar != "")
+                $user->avatar = "https://pedago02a.univ-avignon.fr/~uapv1601678/Click/app/image/profil/".$avatar;
+            $em = dbconnection::getInstance()->getEntityManager();
+            $em->persist($user);
+            $em->flush();
+            return true;
+        }
+    }
 }
 ?>

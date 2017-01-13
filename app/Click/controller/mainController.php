@@ -217,6 +217,31 @@ class mainController{
                 $user->statut =htmlspecialchars($request['statut']) ;
         return context::SUCCESS;
     }
+
+    public static function modificationPP($request,$context){
+        $context->info = "";
+        $user = $context::getSessionAttribute("utilisateur");
+        ///Redirection Si l'utilisateur n'est pas connecte
+        if($user === NULL) {
+            $context->redirect("Click.php?action=login");
+        }
+        if(isset($_FILES["image"]) && ($_FILES["image"]["size"] != 0))
+        {
+
+                $target_dir = "image/profil/";
+                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                $check = @getimagesize($_FILES["image"]["tmp_name"]);
+                if ($check !== false) {
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                       utilisateurTable::setPP(strval($user->id),basename($_FILES["image"]["name"]));
+                        $user->avatar = "https://pedago02a.univ-avignon.fr/~uapv1601678/Click/app/image/profil/".basename($_FILES["image"]["name"]);
+                        $context->info = "https://pedago02a.univ-avignon.fr/~uapv1601678/Click/app/image/profil/".basename($_FILES["image"]["name"]);
+                    }
+                }
+
+            }
+        return context::SUCCESS;
+    }
     public static function partagerMessage($request,$context){
         $user = $context::getSessionAttribute("utilisateur");
         ///Redirection Si l'utilisateur n'est pas connecte
